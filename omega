@@ -112,7 +112,6 @@ def main() -> int:
         print(logo + '\n\n')
         print(colorize("%Bold", "# Stealth post-exploitation framework\n"))
         print(colorize("%DimWhite", rand_message()))
-        cmdrun(iface, "help")
 
     iface.init()
 
