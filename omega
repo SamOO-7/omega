@@ -46,19 +46,7 @@ def parser_help_formatter(prog):
 
 def build_parser():
     """build argparse parser"""
-    p = argparse.ArgumentParser()
-    p.formatter_class = parser_help_formatter
-    p.description = "The stealth post-exploitation framework"
-    p.add_argument('-v', '--version',
-                   help="output version information and exit",
-                   action="store_true")
-    p.add_argument('-l', '--load',
-                   help="load session file",
-                   metavar="<SESSION>")
-    p.add_argument('-t', '--target',
-                   help="set remote TARGET URL",
-                   metavar="<URL>")
-    return p
+    pass
 
 
 def run_process(cmd: list) -> str:
@@ -94,23 +82,9 @@ def main() -> int:
     """omega's main function
     """
     # Make omega usable as shebang for scripting
-    if len(sys.argv) == 2 and os.path.isfile(sys.argv[1]):
-        sys.argv.insert(1, "--source")
 
     parser = build_parser()
     opt = vars(parser.parse_args())
-
-    if opt['version']:
-        git_ver = run_process(['git', '-C', src.BASEDIR, 'describe'])
-        version = (git_ver + " (git)") if git_ver else VERSION
-        print("Omega Framework, version %s\n"
-              "License GPLv3+: GNU GPL version 3 or later"
-              " <http://gnu.org/licenses/gpl.html>\n\n"
-              "This is free software; you are free"
-              " to change and redistribute it.\n"
-              "There is NO WARRANTY, to the extent permitted by law."
-              % version)
-        return 0
 
     # Enable stdout wrapper
     sys.stdout = ui.output.Wrapper(backlog=True)
@@ -141,16 +115,6 @@ def main() -> int:
         cmdrun(iface, "help")
 
     iface.init()
-
-    if opt['load']:
-        if cmdrun(iface, "session load '%s'" % opt['load']) != 0:
-            print()
-            parser.error("%r: invalid session file." % opt['load'])
-
-    if opt['target']:
-        if cmdrun(iface, "set TARGET '%s'" % opt['target']) != 0:
-            print()
-            parser.error("%r: couldn't set target url." % opt['target'])
 
     retval = 0
 
