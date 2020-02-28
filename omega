@@ -13,7 +13,7 @@ https://github.com/entynetproject/omega
 import sys
 import os
 
-os.system("printf '\033]2;Proton Framework\a'")
+os.system("printf '\033]2;Omega Framework\a'")
 
 VERSION = "3.0"
 
