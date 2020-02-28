@@ -17,10 +17,6 @@ os.system("printf '\033]2;Proton Framework\a'")
 
 VERSION = "3.0"
 
-if sys.platform.lower().startswith('win'):
-    sys.exit('[-] If you use Windows, you should be '
-             'a TARGET rather than an attacker ...')
-
 try:
     import src  # spread omega sources
 
@@ -56,24 +52,12 @@ def build_parser():
     p.add_argument('-v', '--version',
                    help="output version information and exit",
                    action="store_true")
-    p.add_argument('-c', '--config',
-                   help="use alternative configuration file",
-                   metavar="<FILE>")
     p.add_argument('-l', '--load',
                    help="load session file",
                    metavar="<SESSION>")
     p.add_argument('-t', '--target',
                    help="set remote TARGET URL",
                    metavar="<URL>")
-    p.add_argument('-s', '--source',
-                   help="run commands from file (disables interactive mode)",
-                   metavar="<FILE>")
-    p.add_argument('-e', '--eval',
-                   help="run omega command (disables interactive mode)",
-                   metavar="<CMD>")
-    p.add_argument('-i', '--interactive',
-                   help="force interactive mode if unset by `-e` or `-s`",
-                   action="store_true")
     return p
 
 
@@ -134,8 +118,7 @@ def main() -> int:
     # determine if the interface would run in interactive mode
     interactive = False
     if ui.input.isatty():
-        if (not opt['eval'] and not opt['source']) or opt['interactive']:
-            interactive = True
+        interactive = True
 
     # make this variable accessible from omega core
     ui.interface.interactive = interactive
@@ -143,8 +126,7 @@ def main() -> int:
     # Start shell interface
     iface = ui.interface.Shell()
 
-    if opt['config'] is None:
-        opt['config'] = core.USERDIR + "config"
+    opt['config'] = core.USERDIR + "config"
 
     if cmdrun(iface, "source -e '%s'" % opt['config'], show_err=True) != 0:
         print()
@@ -170,14 +152,7 @@ def main() -> int:
             print()
             parser.error("%r: couldn't set target url." % opt['target'])
 
-    if opt['source']:
-        if cmdrun(iface, "source '%s'" % opt['source']) != 0:
-            print()
-            parser.error("%r: couldn't read source file." % opt['source'])
-
     retval = 0
-    if opt['eval']:
-        retval = cmdrun(iface, opt['eval'])
 
     if interactive or not ui.input.isatty():
         iface.cmdloop()
