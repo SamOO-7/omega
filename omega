@@ -43,12 +43,6 @@ def parser_help_formatter(prog):
     fmt = argparse.HelpFormatter(prog, **kwargs)
     return fmt
 
-
-def build_parser():
-    """build argparse parser"""
-    pass
-
-
 def run_process(cmd: list) -> str:
     """get output of given shell command"""
     child = sp.Popen(cmd, stdout=sp.PIPE, stderr=sp.DEVNULL)
@@ -82,9 +76,6 @@ def main() -> int:
     """omega's main function
     """
     # Make omega usable as shebang for scripting
-
-    parser = build_parser()
-    opt = vars(parser.parse_args())
 
     # Enable stdout wrapper
     sys.stdout = ui.output.Wrapper(backlog=True)
