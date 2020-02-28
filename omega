@@ -99,19 +99,11 @@ def main() -> int:
 
     # Start shell interface
     iface = ui.interface.Shell()
-
-    opt['config'] = core.USERDIR + "config"
-
-    if cmdrun(iface, "source -e '%s'" % opt['config'], show_err=True) != 0:
-        print()
-        parser.error("%r: config file contains invalid commands."
-                     % opt['config'])
-    elif interactive and ui.output.isatty():
+        
+    if interactive and ui.output.isatty():
         logo = Path(src.BASEDIR + "data/logo.ascii").read()
         cmdrun(iface, "lrun clear")
-        print(logo + '\n\n')
-        print(colorize("%Bold", "# Stealth post-exploitation framework\n"))
-        print(colorize("%DimWhite", rand_message()))
+        print(logo + '\n')
 
     iface.init()
 
@@ -119,8 +111,6 @@ def main() -> int:
 
     if interactive or not ui.input.isatty():
         iface.cmdloop()
-        if ui.output.isatty():
-            print(colorize("%DimWhite", '\n' + rand_message() + '\n'))
 
     return retval
 
