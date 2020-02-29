@@ -61,6 +61,23 @@
 > omega
       
 ***
+
+# Why Omega Framework
+
+ * .
+```
+.
+``` 
+ * .
+```
+.
+```
+ * .
+```
+.
+```
+
+***
     
 # Omega Framework disclaimer
 
