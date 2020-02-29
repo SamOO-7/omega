@@ -1,5 +1,7 @@
 # Omega Framework
 
+![omega](https://user-images.githubusercontent.com/54115104/75609758-48fd6780-5b1c-11ea-971f-3080bf988231.jpeg)
+
 <p align="center">
   <a href="http://entynetproject.simplesite.com/">
     <img src="https://img.shields.io/badge/entynetproject-Ivan%20Nikolsky-blue.svg">
