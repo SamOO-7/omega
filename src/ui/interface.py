@@ -395,7 +395,7 @@ class Shell(shnake.Shell):
     # COMMAND: rtfm #
     @staticmethod
     # pylint: disable=unused-argument
-    def do_update():
+    def do_update(argv):
         """Update Omega Framework."""
         import os
         os.system("chmod +x etc/update.sh && etc/update.sh")
