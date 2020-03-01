@@ -25,7 +25,7 @@ READLINE_COMPLETER_DELIMS = ' \t\n`~!#$%^&*()=+[{]}\\|;:\'",<>?'
 class Shell(shnake.Shell):
     """Omega shell interface"""
 
-    prompt = colorize('%Lined', 'omega', '%Reset', ' > ')
+    prompt = colorize('%Lined', 'omega', '%Reset', '> ')
 
     _nocmd = "[-] Unknown Command: %s"
     nohelp = "[-] No help for: %s"
@@ -99,7 +99,7 @@ class Shell(shnake.Shell):
         if self.bind_command:
             # If a command is binded to the prompt
             prompt_elems += ["%ResetBoldWhite", " #", self.bind_command]
-        prompt_elems += ["%Reset", " > "]
+        prompt_elems += ["%Reset", "> "]
         self.prompt = colorize(*prompt_elems)
 
         return retval
