@@ -27,8 +27,8 @@ class Shell(shnake.Shell):
 
     prompt = colorize('%Lined', 'omega', '%Reset', '> ')
 
-    _nocmd = "[-] Unrecognized command!"
-    nohelp = "[-] No help for: %s"
+    _nocmd = "[-] Unrecognized command"
+    nohelp = "[-] No help for %s"
     error = "[-] %s"
 
     bind_command = None
