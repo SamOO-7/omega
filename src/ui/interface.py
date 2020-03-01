@@ -727,20 +727,6 @@ class Shell(shnake.Shell):
         return True
 
     ##################
-    # COMMAND: alias #
-    @staticmethod
-    def complete_alias(text, line, *_):
-        """autocompletion for `alias` command"""
-        argv = line.split()
-        if (len(argv) == 2 and line[-1] == " ") or len(argv) > 2:
-            return []
-        result = []
-        for key in session.Alias.keys():
-            if key.startswith(text):
-                result.append(key)
-        return result
-
-    ##################
     # COMMAND: bind #
     def complete_bind(self, text, line, *_):
         """autocompletion for `bind` command"""
