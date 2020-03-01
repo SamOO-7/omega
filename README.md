@@ -66,17 +66,17 @@
 
 # Why Omega Framework
 
- * Simple PHP payload
+ * Simple PHP payload.
 ```
 All you need to remotely access web server via 
 Omega Framework is only a simple PHP payload.
 ``` 
- * A lot of plugins
+ * A lot of different plugins.
 ```
 There are a lot of different useful plugins in
 Omega Framework such as suidroot and corectl.
 ```
- * Secure HTTP headers
+ * Secure HTTP headers.
 ```
 Omega Framework uses secure HTTP headers 
 to send remote commands to the web server.
