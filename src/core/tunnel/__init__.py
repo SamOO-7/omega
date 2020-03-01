@@ -51,7 +51,7 @@ class Tunnel:
                                 "sure you want to reset environment "
                                 "as shown above ?")
                     if ui.input.Expect(False)(question):
-                        print("[-] %s (%s): Exploitation aborted"
+                        print("[!] %s (%s): Exploitation aborted"
                               % (tmp_session.Env.ADDR, tmp_session.Env.HOST))
                         self.close()
                         return False

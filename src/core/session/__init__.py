@@ -297,7 +297,7 @@ class Session(metadict.MetaDict):
                             obj[elem][key] = value
                         except Exception as error:
                             item_repr = "session.%s.%s" % (elem, key)
-                            msg_prefix = "[-] Couldn't set %s" % item_repr
+                            msg_prefix = "[!] Couldn't set %s" % item_repr
                             if fatal_errors:
                                 print("%s:" % msg_prefix)
                                 raise

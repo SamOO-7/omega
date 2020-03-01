@@ -582,7 +582,7 @@ class Request:
             if type(obj).__name__ == 'str':
                 for line in obj.splitlines():
                     if line:
-                        print("\r[-] %s" % line)
+                        print("\r[!] %s" % line)
                 return True
             return False
 
@@ -683,7 +683,7 @@ class Request:
                         ['', 's'][len(request[self.other_method()]) > 1])
         # or report that the other method has been disabled
         else:
-            print('[-] %s method disabled:' % self.other_method() +
+            print('[!] %s method disabled:' % self.other_method() +
                   ' The REQ_* settings are too restrictive')
 
         query += end + ': '  # add the Abort choice
@@ -756,7 +756,7 @@ class Request:
                 # if the current request failed
                 if error:
                     msg = " (Press Enter or wait 1 minut for the next try)"
-                    sys.stdout.write(colorize("\n[-] ", error, "%White", msg))
+                    sys.stdout.write(colorize("\n[!] ", error, "%White", msg))
                     waitkey = ui.input.Expect(None)
                     waitkey.timeout = 60
                     waitkey.skip_interrupt = False
@@ -802,7 +802,7 @@ class Request:
             if response['error']:
                 return response['error']
             # elif no data, nothing can be parsed
-            print("[-] Server response coudn't be unparsed"
+            print("[!] Server response coudn't be unparsed"
                   " (maybe invalid PASSKEY ?)")
             # print payload forwarder error (if any)
             if self.payload_forwarder_error:

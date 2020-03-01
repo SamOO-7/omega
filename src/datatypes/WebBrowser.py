@@ -59,8 +59,8 @@ class WebBrowser(str):
     def open(self, url):
         val = self._raw_value()
         if val == "disabled":
-            print("[-] BROWSER is disabled, open the following URL manually:")
-            print("[-]   %s" % url)
+            print("[!] BROWSER is disabled, open the following URL manually:")
+            print("[!]   %s" % url)
         else:
             browser = webbrowser.get(self._raw_value())
             # try to open url in new browser tab

@@ -56,7 +56,7 @@ class Plugins(metadict.MetaDict):
             if num_loaded:
                 print("[*] %d plugins correctly loaded" % num_loaded)
             else:
-                print("[-] No plugins were loaded")
+                print("[!] No plugins were loaded")
         return not self.errors
 
     def categories(self):

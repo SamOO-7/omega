@@ -148,7 +148,7 @@ class Path(str):
         try:
             subprocess.call(args)
         except OSError:
-            print("[-] Invalid EDITOR (fix with `set EDITOR <value>`)")
+            print("[!] Invalid EDITOR (fix with `set EDITOR <value>`)")
             raise
         new = self.read(bin_mode=True)
         return new != old

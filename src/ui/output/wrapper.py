@@ -17,7 +17,7 @@ wtf
 
 As shown in the example above, the wrapper provides a nice backlog
 feature. It also provides magic output transformation on information
-tags. For example, if a line begins with "[-] ", it is automatically
+tags. For example, if a line begins with "[!] ", it is automatically
 colored to bright red.
 
 NOTE: Ansi escape codes (terminal colors) are automatically removed
@@ -157,9 +157,9 @@ class Stdout:
         '\\x1b[1m\\x1b[34m[*]\\x1b[0m FOO: \\x1b[37m«bar»\\x1b[0m\\n'
         """
         tag_list = [('%BoldBlue', '[*] '),   # INFO
-                    ('%BoldRed', '[!] '),    # ERROR
+                    ('%BoldRed', '[-] '),    # ERROR
                     ('%BoldPink', '[?] '),   # QUESTION
-                    ('%BoldYellow', '[-] '), # WARNING
+                    ('%BoldYellow', '[!] '), # WARNING
                     ('%BoldBlack', '[#] ')]  # DEBUG
 
         # if not tagged, return the line as it is
@@ -170,7 +170,7 @@ class Stdout:
             if index == len(tag_list) - 1:
                 return line
 
-        # remove dulpicate tags >>> "[!] [!] Foo" -> "[!] Foo"
+        # remove dulpicate tags >>> "[-] [-] Foo" -> "[-] Foo"
         while line[len(tag[1]):][0:len(tag[1])] == tag[1]:
             line = line[len(tag[1]):]
 
