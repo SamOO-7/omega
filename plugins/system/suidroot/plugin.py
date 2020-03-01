@@ -1,3 +1,23 @@
+#!/usr/bin/env python3
+
+#            ---------------------------------------------------
+#                              Omega Framework                                
+#            ---------------------------------------------------
+#                  Copyright (C) <2020>  <Entynetproject>       
+#
+#        This program is free software: you can redistribute it and/or modify
+#        it under the terms of the GNU General Public License as published by
+#        the Free Software Foundation, either version 3 of the License, or
+#        any later version.
+#
+#        This program is distributed in the hope that it will be useful,
+#        but WITHOUT ANY WARRANTY; without even the implied warranty of
+#        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#        GNU General Public License for more details.
+#
+#        You should have received a copy of the GNU General Public License
+#        along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 """Setuid backdoor handler
 
 SYNOPSIS:
@@ -22,7 +42,7 @@ LIMITATIONS:
     rights on SUIDROOT_BACKDOOR file.
 
 WARNING:
-    Considering omega's input parser, commands which
+    Considering Omega's input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework MUST be quoted to be
     interpreted as a single argument.
@@ -50,8 +70,8 @@ ENVIRONMENT:
     * SUIDROOT_PWD
         Current working directory for privileged user
 
-AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+DEVELOPER:
+    Entynetproject
 """
 
 import sys
