@@ -1072,10 +1072,12 @@ class Shell(shnake.Shell):
             underline = '=' * len(grp_name)
             if grp_name == "Command Aliases":
                 print("\n" + grp_name + "\n" + underline + "\n"
+                      "                               "
                       "    Alias  " + cmd_col + "Value\n"
                       "    -----  " + cmd_col + "-----")
             else:
                 print("\n" + grp_name + "\n" + underline + "\n"
+                      "                                     "
                       "    Command" + cmd_col + "Description\n"
                       "    -------" + cmd_col + "-----------")
             grp_cmdlist.sort()
