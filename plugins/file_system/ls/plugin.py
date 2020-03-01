@@ -59,7 +59,7 @@ status = 0
 def abort(msg):
     global status
     status |= 1
-    print("[-] %s: %s" % (plugin.name, msg))
+    print("[!] %s: %s" % (plugin.name, msg))
 
 for path in plugin.argv[1:] or [environ['PWD']]:
 

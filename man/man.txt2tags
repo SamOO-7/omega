@@ -76,10 +76,6 @@ Leave the current shell interface
 : **help**
 Shows help for all available commands
 : **infect**
-Prints a working backdoor to inject in the target
-: **lcd**
-Change local working directory
-: **lpwd**
 Print local working directory
 : **rtfm**
 Read this manual page

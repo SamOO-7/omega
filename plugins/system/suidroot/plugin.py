@@ -170,7 +170,7 @@ try:
     for line in lines:
         print(line)
 except AssertionError:
-    print("[-] Couldn't retrieve new $PWD.")
-    print("[-] Raw output:")
+    print("[!] Couldn't retrieve new $PWD.")
+    print("[!] Raw output:")
     print(output)
     sys.exit(1)

@@ -108,7 +108,7 @@ if plugin.argv[1].lower() == "connect":
     if len(plugin.argv) < 3:
         sys.exit(plugin.help)
     if plugin.argv[2].count('@') != 1:
-        sys.exit("[-] Invalid connection credentials")
+        sys.exit("[!] Invalid connection credentials")
     raw_creds = plugin.argv[2]
     if len(plugin.argv) > 3:
         if plugin.argv[3] == "-p":
@@ -133,7 +133,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load MSSQL_CRED environment variable
 if "MSSQL_CRED" not in environ:
-    sys.exit("[-] Not connected to any server, use `mssql connect` before")
+    sys.exit("[!] Not connected to any server, use `mssql connect` before")
 creds = load_credentials(environ["MSSQL_CRED"])
 
 # format last mssql token correctly

@@ -98,7 +98,7 @@ def load_credentials(creds):
             result['PORT'] = parsed[2]
             result['CONNECTOR'] = parsed[3]
             result['PASS'] = parsed[4]
-            print("[-] Deprecated ORACLE_CRED env var scheme, run "
+            print("[!] Deprecated ORACLE_CRED env var scheme, run "
                   "`oracle connect` again to update it.")
         except:
             sys.exit("couldn't parse ORACLE_CRED credentials: %s" % creds)

@@ -68,6 +68,6 @@ writer['MTIME'] = file_mtime
 writer_response = writer.send()
 
 if writer_response == "MTIME_FAILED":
-    print("[-] %s: Could not set MTIME to %r" % (plugin.argv[0], file_mtime))
+    print("[!] %s: Could not set MTIME to %r" % (plugin.argv[0], file_mtime))
 
 print("[*] File correctly written at %s" % absolute_path)

@@ -190,7 +190,7 @@ elif len(plugin.argv) == 2 and plugin.argv[1] == "--browser":
     if tmp_file.browse():
         print("[*] Successfully opened %r in browser" % tmp_file)
     else:
-        print("[-] Failed to open %r in web browser" % tmp_file)
-        print("[-] Try to change BROWSER environment variable")
+        print("[!] Failed to open %r in web browser" % tmp_file)
+        print("[!] Try to change BROWSER environment variable")
 else:
     sys.exit(plugin.help)

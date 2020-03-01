@@ -129,10 +129,6 @@ INTERFACE
 
        infect Prints a working backdoor to inject in the target
 
-       lcd    Change local working directory
-
-       lpwd   Print local working directory
-
        rtfm   Read this manual page
 
        save   Save the current session in a file, for future usage
