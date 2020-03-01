@@ -551,6 +551,12 @@ class Shell(shnake.Shell):
         return result
 
     @staticmethod
+    def do_clear(argv):
+        """Clear terminal window."""
+        import os
+        os.system("clear")
+    
+    @staticmethod
     def do_info(argv):
         """Show configuration settings."""
         string = (argv + [""])[1]
