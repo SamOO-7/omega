@@ -370,7 +370,7 @@ class Shell(cmd.Cmd):
         """
         arg0_repr = "${!r}".format(argv[0])
         arg0 = argv[0] if argv[0] == arg0_repr[2:-1] else arg0_repr
-        self.stdout.write((self.nocmd + '\n') % arg0)
+        self.stdout.write(self.nocmd + '\n')
         # standard return code on bash at `command not found` error.
         return 127
 
