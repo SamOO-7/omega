@@ -390,31 +390,13 @@ class Shell(shnake.Shell):
             return False
 
         return tunnel.open()  # it raises exception if fails
-
-    #################
-    # COMMAND: rtfm #
+    
     @staticmethod
     # pylint: disable=unused-argument
     def do_update(argv):
         """Update Omega Framework."""
         import os
         os.system("chmod +x etc/update.sh && etc/update.sh")
-    def do_rtfm(argv):
-        """Read the fine manual.
-
-        SYNOPSIS:
-            rtfm
-
-        DESCRIPTION:
-            Display omega user manual. If available, the `man`
-            command is used for display. Otherwise, a text version
-            of the man page is displayed in omega interface.
-        """
-        man = Path(core.BASEDIR, 'man/omega.1')
-        cmd = 'man omega 2>/dev/null || man %r 2>/dev/null' % man
-        if os.system(cmd) != 0:
-            txt_man = Path(core.BASEDIR, 'man/omega.txt')
-            print(txt_man.read())
 
     ####################
     # COMMAND: session #
