@@ -139,7 +139,6 @@ class Shell(shnake.Shell):
         if argv[0] in plugins.keys():
             if tunnel:
                 return plugins.run(argv)
-            self.nocmd = "[!] Must connect to run `%s` plugin (`help exploit`)."
         return super().default(argv)
 
     #################
