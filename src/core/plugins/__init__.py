@@ -54,9 +54,10 @@ class Plugins(metadict.MetaDict):
             print(msg % self.errors)
         if verbose or self.errors or ui.input.isatty():
             if num_loaded:
-                print("[*] %d plugins correctly loaded" % num_loaded)
+                import time
+                time.sleep(0)
             else:
-                print("[!] No plugins were loaded")
+                print("[!] No plugins were loaded.")
         return not self.errors
 
     def categories(self):

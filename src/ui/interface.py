@@ -27,9 +27,9 @@ class Shell(shnake.Shell):
 
     prompt = colorize('%Lined', 'omega', '%Reset', '> ')
 
-    _nocmd = "[-] Unrecognized command: %s"
-    nohelp = "[-] No help for %s"
-    error = "[-] %s"
+    _nocmd = "[-] Unrecognized command!"
+    nohelp = "[-] No help for %s!"
+    error = "[-] %s!"
 
     bind_command = None
 
@@ -56,7 +56,8 @@ class Shell(shnake.Shell):
         # Make 'nocmd' error message explicit if tunnel is connected
         self.nocmd = self._nocmd
         if tunnel:
-            self.nocmd += " (use `run` plugin to run remote command)"
+            import time
+            time.sleep(0)
         # Reset backlog before each command except backlog
         if self.bind_command:
             if len(argv) == 1 and argv[0] == "exit":
@@ -138,7 +139,7 @@ class Shell(shnake.Shell):
         if argv[0] in plugins.keys():
             if tunnel:
                 return plugins.run(argv)
-            self.nocmd = "[!] Must connect to run `%s` plugin (`help exploit`)"
+            self.nocmd = "[!] Must connect to run `%s` plugin (`help exploit`)."
         return super().default(argv)
 
     #################
