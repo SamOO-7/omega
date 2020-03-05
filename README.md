@@ -74,7 +74,7 @@ Omega Framework is only a simple PHP payload.
  * A lot of different plugins.
 ```
 There are a lot of different useful plugins in
-Omega Framework such as suidroot and corectl.
+Omega Framework such as suidroot and exec.
 ```
  * Secure HTTP headers.
 ```
