@@ -606,15 +606,13 @@ class Shell(shnake.Shell):
         """
         # `set [<STRING>]` display concerned settings list
         if len(argv) < 3:
-            if string:
-                import time
-                time.sleep(0)
-            else:
-                strin = None
-                
-            if string not in session.Conf:
+            try:
+                if string not in session.Conf:
+                    string = "<VAR>"
+                print("[*] For detailed help, run `help set %s`." % string)
+            except:
                 string = "<VAR>"
-            print("[*] For detailed help, run `help set %s`." % string)
+                print("[*] For detailed help, run `help set %s`." % string)
 
         # buffer edit mode
         elif argv[2] == "+":
