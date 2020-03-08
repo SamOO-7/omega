@@ -39,7 +39,7 @@ try:
     from ui.color import colorize
     from datatypes import Path
 except KeyboardInterrupt:
-    sys.exit("\r[-] Omega initialization interrupted")
+    sys.exit("\r[-] Omega initialization interrupted!")
 
 
 
@@ -72,8 +72,6 @@ def cmdrun(iface, cmdobj, show_err=False) -> int:
     """
     try:
         retval = iface.interpret(cmdobj)
-        if retval != 0 and show_err and iface.last_exception:
-            iface.interpret("corectl stack-traceback")
     except (SyntaxWarning, SyntaxError) as err:
         retval = iface.onexception(err)
     return retval
