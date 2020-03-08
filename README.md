@@ -23,7 +23,7 @@
  </a>
 </p>
 
-![omega](https://user-images.githubusercontent.com/54115104/76161167-a6f40580-6141-11ea-9cc4-d39a7a48fea1.png)
+![omega](https://user-images.githubusercontent.com/54115104/76167330-dc671600-6176-11ea-88bb-1c7b8b2bf5ee.png)
 
 ***
 
@@ -83,6 +83,8 @@ Omega Framework such as suidroot and exec.
 Omega Framework uses secure HTTP headers 
 to send remote commands to the web server.
 ```
+
+![http](https://user-images.githubusercontent.com/54115104/76167328-da9d5280-6176-11ea-807d-a9820f847914.png)
 
 ***
     
