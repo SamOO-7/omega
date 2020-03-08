@@ -9,7 +9,7 @@ Take a look at shell.py parserline() and lex() methods.
 import io
 from .lexer import lex as shnake_lex
 
-__author__ = "entynetproject <http://goo.gl/kb2wf>"
+__author__ = "Entynetproject"
 
 class LineBuffer:
     """Command line generator designed for shemu's Parser() class

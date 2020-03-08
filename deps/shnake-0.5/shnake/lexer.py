@@ -7,7 +7,7 @@ a powerful bash-like string lexer.
 
 import re
 
-__author__ = "entynetproject <http://goo.gl/kb2wf>"
+__author__ = "Entynetproject"
 
 
 class Lexer:

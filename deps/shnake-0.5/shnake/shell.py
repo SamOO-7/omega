@@ -91,7 +91,7 @@ import cmd
 from .lexer import lex as shnake_lex
 from .parser import parse as shnake_parse
 
-__author__ = "entynetproject <http://goo.gl/kb2wf>"
+__author__ = "Entynetproject"
 
 
 class Shell(cmd.Cmd):

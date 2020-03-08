@@ -652,19 +652,18 @@ class socksocket(_BaseSocket):
             raise GeneralProxyError("HTTP proxy server sent invalid response")
 
         if not proto.startswith("HTTP/"):
-            raise GeneralProxyError("Proxy server does not appear to be an HTTP proxy")
+            raise GeneralProxyError("Proxy server does not appear to be an HTTP proxy!")
 
         try:
             status_code = int(status_code)
         except ValueError:
-            raise HTTPError("HTTP proxy server did not return a valid HTTP status")
+            raise HTTPError("HTTP proxy server did not return a valid HTTP status!")
 
         if status_code != 200:
             error = "{0}: {1}".format(status_code, status_msg)
             if status_code in (400, 403, 405):
                 # It's likely that the HTTP proxy server does not support the CONNECT tunneling method
-                error += ("\n[*] Note: The HTTP proxy server may not be supported by PySocks"
-                          " (must be a CONNECT tunnel proxy)")
+                error += ("\n[*] The HTTP proxy server may not be supported by PySocks.")
             raise HTTPError(error)
 
         self.proxy_sockname = (b"0.0.0.0", 0)
