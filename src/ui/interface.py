@@ -295,51 +295,10 @@ class Shell(shnake.Shell):
         return False
 
     ####################
-    # COMMAND: history #
-    def do_history(self, argv):
-        """Omega Framework history.
-
-        SYNOPSIS:
-            history [<COUNT>]
-
-        DESCRIPTION:
-            Returns a formatted string giving the event number and
-            contents for each of the events in the history list
-            except for current event.
-
-            If [COUNT] is specified, only the [COUNT] most recent
-            events are displayed.
-
-            > history
-              - Display the full history of events.
-            > history 10
-              - Display last 10 commands of the history.
-        """
-        import readline
-
-        argv.append('9999999999')
-
-        try:
-            count = int(argv[1])
-        except ValueError:
-            return self.interpret("help history")
-
-        last = readline.get_current_history_length()
-        while last > session.Hist.MAX_SIZE:
-            readline.remove_history_item(0)
-            last -= 1
-        first = last - count
-        if first < 1:
-            first = 1
-        for i in range(first, last):
-            cmd = readline.get_history_item(i)
-            print("{:4d}  {:s}".format(i, cmd))
-
-    ####################
-    # COMMAND: exploit #
+    # COMMAND: run     #
     @staticmethod
-    def complete_exploit(text, line, *_):
-        """autocompletion for `exploit` command"""
+    def complete_run(text, line, *_):
+        """autocompletion for `run` command"""
         argv = line.split()
         if (len(argv) == 2 and line[-1] == " ") or len(argv) > 2:
             return []
