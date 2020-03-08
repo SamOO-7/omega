@@ -124,8 +124,8 @@ if plugin.argv[1].lower() == "connect":
             del environ["MYSQL_BASE"]
         environ["MYSQL_CRED"] = raw_creds
 
-    msg = ("[*] SUCCESS: Access granted for user"
-           " '%s'@'%s' (using password: %s)")
+    msg = ("[+] Access granted for user"
+           " '%s'@'%s' (password: %s)!")
     msg %= creds["USER"], creds["HOST"], ['YES', 'NO'][not creds['PASS']]
     print(msg)
     sys.exit(0)
@@ -153,7 +153,7 @@ if plugin.argv[1].lower() == "use":
     payload.send()
     # update MYSQL_BASE and exit properly
     environ["MYSQL_BASE"] = plugin.argv[2]
-    print("[*] Database changed")
+    print("[+] Database has been changed!")
     sys.exit(0)
 
 
@@ -182,13 +182,13 @@ plural = '' if affected_rows == 1 else 's'
 
 # Query type: SET
 if query_type == "SET":
-    msg = "[*] Query OK, %d row%s affected %s"
+    msg = "[+] Query OK, %d row%s affected %s!"
     print(msg % (affected_rows, plural, elapsed_time))
     sys.exit(0)
 
 # Query type: GET
 if affected_rows == 0:
-    print("[*] Empty set %s" % elapsed_time)
+    print("[!] Empty set.")
     sys.exit(0)
 
 fields = response[2][0]

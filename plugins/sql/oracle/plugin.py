@@ -98,8 +98,7 @@ def load_credentials(creds):
             result['PORT'] = parsed[2]
             result['CONNECTOR'] = parsed[3]
             result['PASS'] = parsed[4]
-            print("[!] Deprecated ORACLE_CRED env var scheme, run "
-                  "`oracle connect` again to update it.")
+            print("[!] Deprecated ORACLE_CRED env var scheme.")
         except:
             sys.exit("couldn't parse ORACLE_CRED credentials: %s" % creds)
     return result
@@ -137,8 +136,8 @@ if plugin.argv[1].lower() == "connect":
     if raw_creds != environ["ORACLE_CRED"]:
         environ["ORACLE_CRED"] = raw_creds
 
-    msg = ("[*] SUCCESS: Access granted for user"
-           " '%s' (using password: %s)")
+    msg = ("[+] Access granted for user"
+           " '%s' (using password: %s)!")
     msg %= creds["USER"], ['YES', 'NO'][not creds['PASS']]
     print(msg)
     sys.exit(0)
@@ -177,7 +176,7 @@ plural = '' if affected_rows == 1 else 's'
 
 # Query type: SET
 if query_type == "SET":
-    msg = "[*] Query OK, %d row%s affected %s"
+    msg = "[+] Query OK, %d row%s affected %s!"
     print(msg % (affected_rows, plural, elapsed_time))
     sys.exit(0)
 
@@ -186,7 +185,7 @@ rows = response[2][1:]
 
 # Query type: GET
 if fields is None or affected_rows == 0:
-    print("[*] Empty set %s" % elapsed_time)
+    print("[!] Empty set.")
     sys.exit(0)
 
 # replace NoneType() values to str("NULL") in all rows

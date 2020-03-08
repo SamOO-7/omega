@@ -12,7 +12,7 @@ DESCRIPTION:
     is known by $PWD environment variable (`env PWD`)
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 from api import environ

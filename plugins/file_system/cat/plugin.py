@@ -19,7 +19,7 @@ EXAMPLES:
         must be quoted to be parsed as a single argument.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

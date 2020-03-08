@@ -33,7 +33,7 @@ WARNING:
     variable is the only option.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

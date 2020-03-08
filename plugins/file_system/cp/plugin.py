@@ -27,7 +27,7 @@ EXAMPLES:
       - Copy this interesting file to a web accessible path.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

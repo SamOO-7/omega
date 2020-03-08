@@ -20,7 +20,7 @@ EXAMPLES:
       - Open remote file within local text EDITOR
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys
@@ -47,7 +47,7 @@ file = Path(filename=path_filename)
 
 if reader_response == "NEW_FILE":
     file_mtime = None
-    print("[*] Creating new file: %s" % absolute_path)
+    print("[*] Creating new file %s..." % absolute_path)
 else:
     # writting bytes() obj to file in binary mode
     file_mtime, file_data = reader_response
@@ -56,9 +56,9 @@ else:
 modified = file.edit()
 if not modified:
     if reader_response == "NEW_FILE":
-        sys.exit("File creation aborted")
+        sys.exit("File creation aborted!")
     else:
-        sys.exit("The file was not modified")
+        sys.exit("The file was not modified!")
 
 writer = server.payload.Payload("writer.php")
 writer['FILE'] = absolute_path
@@ -68,6 +68,6 @@ writer['MTIME'] = file_mtime
 writer_response = writer.send()
 
 if writer_response == "MTIME_FAILED":
-    print("[!] %s: Could not set MTIME to %r" % (plugin.argv[0], file_mtime))
+    print("[-] %s: Could not set MTIME to %r!" % (plugin.argv[0], file_mtime))
 
-print("[*] File correctly written at %s" % absolute_path)
+print("[+] File correctly written at %s!" % absolute_path)

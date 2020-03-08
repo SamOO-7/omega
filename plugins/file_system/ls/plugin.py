@@ -42,7 +42,7 @@ EXAMPLES:
       - List any element in D:\ whose names end with '.ini'
 
 MAINTAINERS:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
     Wannes Rombouts <https://github.com/wapiflapi>
 """
 
@@ -59,7 +59,7 @@ status = 0
 def abort(msg):
     global status
     status |= 1
-    print("[!] %s: %s" % (plugin.name, msg))
+    print("[!] %s: %s." % (plugin.name, msg))
 
 for path in plugin.argv[1:] or [environ['PWD']]:
 

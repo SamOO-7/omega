@@ -108,7 +108,7 @@ if plugin.argv[1].lower() == "connect":
     if len(plugin.argv) < 3:
         sys.exit(plugin.help)
     if plugin.argv[2].count('@') != 1:
-        sys.exit("[!] Invalid connection credentials")
+        sys.exit("[-] Invalid connection credentials.")
     raw_creds = plugin.argv[2]
     if len(plugin.argv) > 3:
         if plugin.argv[3] == "-p":
@@ -125,7 +125,7 @@ if plugin.argv[1].lower() == "connect":
             del environ["MSSQL_BASE"]
         environ["MSSQL_CRED"] = raw_creds
 
-    msg = ("[*] SUCCESS: Access granted for user"
+    msg = ("[+] Access granted for user!"
            " '%s'@'%s' (using password: %s)")
     msg %= creds["USER"], creds["HOST"], ['YES', 'NO'][not creds['PASS']]
     print(msg)
@@ -133,7 +133,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load MSSQL_CRED environment variable
 if "MSSQL_CRED" not in environ:
-    sys.exit("[!] Not connected to any server, use `mssql connect` before")
+    sys.exit("[!] Not connected to any server.")
 creds = load_credentials(environ["MSSQL_CRED"])
 
 # format last mssql token correctly
@@ -154,7 +154,7 @@ if plugin.argv[1].lower() == "use":
     payload.send()
     # update MSSQL_BASE and exit properly
     environ["MSSQL_BASE"] = plugin.argv[2]
-    print("[*] Database changed")
+    print("[+] Database has been changed!")
     sys.exit(0)
 
 
@@ -183,13 +183,13 @@ plural = '' if affected_rows == 1 else 's'
 
 # Query type: SET
 if query_type == "SET":
-    msg = "[*] Query OK, %d row%s affected %s"
+    msg = "[+] Query OK, %d row%s affected %s!"
     print(msg % (affected_rows, plural, elapsed_time))
     sys.exit(0)
 
 # Query type: GET
 if affected_rows == 0:
-    sys.exit("[*] Empty set %s" % elapsed_time)
+    sys.exit("Empty set.")
 
 fields = response[2][0]
 rows = response[2][1:]

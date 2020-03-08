@@ -11,7 +11,7 @@ DESCRIPTION:
     Get remote file status informations
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

@@ -31,7 +31,7 @@ EXAMPLES:
       - Download the sql.php file to the current local directory
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys
@@ -77,22 +77,22 @@ if not os.path.isdir(local_dirname):
     if os.path.isdir(local_dirname):
         local_basename = os.path.basename(local_abspath)
     else:
-        sys.exit("%s: Invalid local directory" % local_dirname)
+        sys.exit("%s: Invalid local directory!" % local_dirname)
 
 try:
     Path(local_dirname, mode='w')
 except ValueError:
-    sys.exit("%s: Local directory not writable" % local_dirname)
+    sys.exit("%s: Local directory not writable!" % local_dirname)
 
 local_abspath = os.path.join(local_dirname, local_basename)
 
 if not force and os.path.exists(local_abspath):
     if os.path.isfile(local_abspath):
-        question = "Local destination %s already exists, overwrite it ?"
+        question = "Local destination %s already exists, overwrite it?"
         if ui.input.Expect(False)(question % local_abspath):
-            sys.exit("File transfer aborted")
+            sys.exit("File transfer aborted.")
     else:
-        sys.exit("Local destination %s already exists" % local_abspath)
+        sys.exit("Local destination %s is already exists!" % local_abspath)
 
 payload = server.payload.Payload("payload.php")
 payload['FILE'] = abspath
@@ -105,4 +105,4 @@ try:
 except ValueError as err:
     sys.exit("Couldn't download file to %s: %s" % (local_abspath, err))
 
-print("[*] Download complete: %s -> %s" % (abspath, local_abspath))
+print("[+] Download complete!")

@@ -23,7 +23,7 @@ EXAMPLES:
       - Grant execution and setuid bit on file
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

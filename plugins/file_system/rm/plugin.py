@@ -15,7 +15,7 @@ EXAMPLES:
       - Remove "./pdfs/r75.php" file from remote server
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

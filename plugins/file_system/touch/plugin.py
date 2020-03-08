@@ -29,7 +29,7 @@ EXAMPLES:
       - Set `new.php`'s times to same values as `old.php`
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

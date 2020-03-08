@@ -27,7 +27,7 @@ EXAMPLES:
       - Create 'h/' directory, and parent directories as needed.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

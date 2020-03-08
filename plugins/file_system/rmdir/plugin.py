@@ -7,7 +7,7 @@ DESCRIPTION:
     Remove REMOTE-DIRECTORY if it is empty.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys

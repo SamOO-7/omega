@@ -21,8 +21,8 @@
 """Setuid backdoor handler
 
 SYNOPSIS:
-    suidroot --create <SUIDROOT_BACKDOOR>
-    suidroot "<COMMAND>"
+    suidroot --create <backdoor>
+    suidroot <command>
 
 DESCRIPTION:
     Provide a simple way to install persistent setuid(2)
@@ -33,13 +33,12 @@ DESCRIPTION:
     as we can. I recommend searching for legitimate setuid()
     files already installed on the system, and using a
     similar file path as SUIDROOT_BACKDOOR.
-    # sources: http://lmgtfy.com/?q=find+suid+files+linux
 
 LIMITATIONS:
     - Only works on Linux/UNIX.
     - RCE must be available (`run` plugin must work).
     - Current (unprivileged) user must have execution
-    rights on SUIDROOT_BACKDOOR file.
+    rights on backdoor file.
 
 WARNING:
     Considering Omega's input parser, commands which
@@ -170,7 +169,7 @@ try:
     for line in lines:
         print(line)
 except AssertionError:
-    print("[!] Couldn't retrieve new $PWD.")
-    print("[!] Raw output:")
+    print("[-] Couldn't retrieve new $PWD!")
+    print("[*] Raw output:")
     print(output)
     sys.exit(1)

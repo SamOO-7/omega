@@ -36,7 +36,7 @@ EXAMPLES:
         answer to the confirmation request.
 
 AUTHOR:
-    entynetproject <http://goo.gl/kb2wf>
+    Entynetproject
 """
 
 import sys
@@ -106,5 +106,5 @@ for iteration in [1, 2]:
         else:
             continue
 
-    print("[*] Upload complete: %s -> %s" % (local_abspath, uploaded_file))
+    print("[+] Upload complete!")
     sys.exit(0)
