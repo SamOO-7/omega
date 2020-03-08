@@ -24,8 +24,8 @@ class WebBrowser(str):
 
         if len(lst) < 2 or name == "disabled":
             if name not in lst + ["", "default"]:
-                raise ValueError("Can't bind to «%s». Valid choices: %s"
-                        % (name, lst_repr))
+                raise ValueError("Can't bind to %s!"
+                        % (name))
             return str.__new__(cls, "disabled")
 
         try:
@@ -37,8 +37,8 @@ class WebBrowser(str):
         except AttributeError:
             return str.__new__(cls, "default")
         except:
-            raise ValueError("Can't bind to «%s». Valid choices: %s"
-                    % (name, lst_repr))
+            raise ValueError("Can't bind to %s!"
+                    % (name))
         return str.__new__(cls, name)
 
     def _raw_value(self):

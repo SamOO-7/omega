@@ -263,7 +263,7 @@ class Shell(shnake.Shell):
 
         if argv[1] == "stack-traceback":
             if not self.last_exception:
-                print("[!] Exception stack is empty")
+                print("[!] Exception stack is empty.")
                 return False
             for line in self.last_exception:
                 print(colorize("%Red", line))
@@ -281,8 +281,7 @@ class Shell(shnake.Shell):
         if argv[1] == "display-http-requests":
             requests = tunnel.get_raw_requests()
             if not requests:
-                print("[!] From now, omega didn't "
-                      "sent any HTTP(s) request")
+                print("[!] Omega Framework didn't sent any HTTP(s) request.")
                 return False
             print("[*] Listing last payload's HTTP(s) requests:\n")
             for num, request in enumerate(requests, 1):
@@ -351,12 +350,12 @@ class Shell(shnake.Shell):
         """Spawn a shell from target server.
 
         SYNOPSIS:
-            exploit [--get-backdoor]
+            run [--get-backdoor]
 
         DESCRIPTION:
             Connect to remote target URL (`help set TARGET`).
 
-            If backdoor (`exploit --get-backdoor`) is correctly
+            If backdoor (`run --get-backdoor`) is correctly
             injected in target URL, omega spawns a remote shell.
 
         OPTIONS:
@@ -371,13 +370,13 @@ class Shell(shnake.Shell):
             if argv[1] == "--get-backdoor":
                 print(obj)
                 return True
-            self.interpret("help exploit")
+            self.interpret("help run")
             return False
 
         print("[*] Current backdoor is: " + obj + "\n")
 
         if tunnel:
-            m = ("[*] Use `set TARGET <VALUE>` to use another url as target."
+            m = ("[*] Use `set TARGET <value>` to use another url as target."
                  "\n[*] To exploit a new server, disconnect from «{}» first.")
             print(m.format(session.Env.HOST))
             return False
@@ -385,7 +384,7 @@ class Shell(shnake.Shell):
         if session.Conf.TARGET() is None:
             m = ("To run a remote tunnel, the backdoor shown above must be\n"
                  "manually injected in a remote server executable web page.\n"
-                 "Then, use `set TARGET <BACKDOORED_URL>` and run `exploit`.")
+                 "Then, use `set TARGET <backdoored_url>` and run `run`.")
             print(colorize("%BoldCyan", m))
             return False
 
@@ -397,127 +396,7 @@ class Shell(shnake.Shell):
         """Update Omega Framework."""
         import os
         os.system("chmod +x etc/update.sh && etc/update.sh")
-
-    ####################
-    # COMMAND: session #
-    @staticmethod
-    def complete_session(text, line, *_):
-        """autocompletion for `session` command"""
-        argv = line.split()
-        if (len(argv) == 2 and line[-1] != " ") or len(argv) == 1:
-            keys = ['save', 'diff', 'upgrade']
-            if tunnel:
-                keys.append("load")
-            return [x for x in keys if x.startswith(text)]
-        if (len(argv) == 2 and line[-1] == " ") \
-                or (len(argv) == 3 and line[-1] != " "):
-            if argv[1] in ["save", "load", "diff"]:
-                if os.path.isfile(session.File):
-                    return [session.File]
-        return []
-
-    @staticmethod
-    def do_session(argv):
-        """Omega Framework session handler.
-
-        SYNOPSIS:
-            session [load|diff] [<FILE>]
-            session save [-f] [<FILE>]
-            session upgrade
-
-        DESCRIPTION:
-            The `session` core command handles omega sessions.
-            Sessions can be considered as omega instances. They
-            handle current configuration settings, environment vars,
-            command aliases, and remote tunnel attributes (if any).
-            They can be saved to a file for further use.
-
-        USAGE:
-            * session [<FILE>]
-                Show a nice colored representation of FILE session
-                content. If called without argument, current session
-                if displayed.
-            * session diff [<FILE>]
-                Show a textual representation of the differences
-                between FILE and current session. If FILE is not set,
-                the diff between session's original and current states
-                if shown.
-            * session save [-f] [<FILE>]
-                Save current session state in FILE.
-                If FILE is not set, the session is saved to it's original
-                path location. It still not bound to a file, default location
-                is '$SAVEPATH/omega.session'.
-                NOTE: The '-f' option, if used, saves the session without
-                      asking user confirmation if file already exists.
-            * session load [<FILE>]
-                Try to load session from FILE.
-                It unset, try to load session from './omega.session'
-            * session upgrade
-                If current session file is in v1-compatible mode,
-                the request handler is limited to POST method and does
-                not supports multi request and stealth modules.
-                This command shall be used to upgrade current session
-                AFTER you upgraded the remote $TARGET with new-style
-                omega backdoor (which can be obtained with
-                `exploit --get-backdoor` command).
-
-        EXAMPLES:
-            > session load /tmp/omega.session
-              - Load /tmp/omega.session.
-            > session save
-              - Save current state to session file.
-
-        WARNING:
-            `session load` should NEVER be used while still connected
-            to a remote TARGET. If you want to load another session,
-            first run `exit` to disconnect from remote server.
-        """
-        # prevent argv IndexError
-        argv += [None, None]
-
-        # session save [<FILE>]
-        if argv[1] == 'save':
-            if argv[2] == '-f':
-                path = argv[3]
-                ask_confirmation = False
-            else:
-                path = argv[2]
-                ask_confirmation = True
-            session.dump(path, ask_confirmation=ask_confirmation)
-            path = session.File if path is None else path
-            session.File = path
-            print("[*] Session saved into %r" % path)
-        # session load [<FILE>]
-        elif argv[1] == 'load':
-            try:
-                session.update(argv[2], update_history=True)
-                print("[#] Session file correctly loaded")
-            except:
-                print("[#] Could not load session file")
-                raise
-        # session diff [<FILE>]
-        elif argv[1] == 'diff':
-            session.diff(argv[2], display_diff=True)
-        # session upgrade
-        elif argv[1] == 'upgrade':
-            if "id" in session.Compat:
-                print("[*] You are about to upgrade omega session.")
-                print("[*] Please ensure that you have correctly upgraded")
-                print("[*] the remote backdoor into target URL.")
-                print("[*] After session upgrade, omega assumes that")
-                print("[*] an up-to-date backdoor is active on $TARGET.")
-                cancel = ui.input.Expect(False)
-                if not cancel("Do you really want to upgrade session now ?"):
-                    session.Compat = {}
-                    print("[*] Session correctly upgraded")
-                else:
-                    print("[!] Session upgrade aborted")
-            else:
-                print("[!] Session already up-to-date")
-        # sesion [<FILE>]
-        else:
-            print(session(argv[1]))
-
+    
     ################
     # COMMAND: set #
     @staticmethod
@@ -549,7 +428,7 @@ class Shell(shnake.Shell):
         """Edit configuration settings.
 
         SYNOPSIS:
-            set [<VAR> [+] ["<VALUE>"]]
+            set <variable> <value>
 
         DESCRIPTION:
             Settings are a collection of editable variables that affect
@@ -561,26 +440,26 @@ class Shell(shnake.Shell):
             > set
               - Display current settings
 
-            > set <STRING>
-              - Display settings whose name starts with STRING
+            > set <string>
+              - Display settings whose name starts with string
 
-            > set <VAR> <VALUE>
+            > set <variable> <value>
               - Assign VALUE to VAR setting (only if it's a valid value)
 
-            > set <VAR> %%DEFAULT%%
+            > set <variable> %%DEFAULT%%
               - Reset VAR's default value with '%%DEFAULT%%' magic string
 
-            > set <VAR> "file:///path/to/file"
+            > set <variable> "file:///path/to/file"
               - Bind VAR's value to a local file content
 
-            > set <VAR> +
+            > set <variable> +
               - Open VAR's value in text editor. This is useful to edit
               values with multiple lines
 
-            > set <VAR> + <LINE>
-              - Add LINE to the end of VAR's value
+            > set <variable> + <line>
+              - Add line to the end of variable's value
 
-            > set <VAR> + "file:///path/to/file"
+            > set <variable> + "file:///path/to/file"
               - Re-bind VAR to a local file path.
               Even if path doesn't exist, the setting will take the value of
               the file if it founds it. Otherwise, previous buffer value is
@@ -602,21 +481,21 @@ class Shell(shnake.Shell):
             > set HTTP_ACCEPT_LANGUAGE None
               - Remove HTTP_ACCEPT_LANGUAGE header with magic value 'None'.
 
-        Use `set help <VAR>` for detailed help about a setting.
+        Use `set help <variable>` for detailed help about a setting.
         """
         # `set [<STRING>]` display concerned settings list
         if len(argv) < 3:
             try:
                 if string not in session.Conf:
-                    string = "<VAR>"
+                    string = "<variable>"
                 print("[*] For detailed help, run `help set %s`." % string)
             except:
-                string = "<VAR>"
+                string = "<variable>"
                 print("[*] For detailed help, run `help set %s`." % string)
 
         # buffer edit mode
         elif argv[2] == "+":
-            # `set <VAR> +`: use $EDITOR as buffer viewer in file mode
+            # `set <variable> +`: use $EDITOR as buffer viewer in file mode
             if len(argv) == 3:
                 # get a buffer obj from setting's raw buffer value
                 file_name = argv[1].upper()
@@ -632,10 +511,10 @@ class Shell(shnake.Shell):
                 # if it has been modified.
                 if buffer.edit():
                     session.Conf[argv[1]] = buffer.read()
-            # `set <VAR> + "value"`: add value on setting possible choices
+            # `set <variable> + "value"`: add value on setting possible choices
             else:
                 session.Conf[argv[1]] += " ".join(argv[3:])
-        # `set <VAR> "value"`: just change VAR's "value"
+        # `set <variable> "value"`: just change VAR's "value"
         else:
             session.Conf[argv[1]] = " ".join(argv[2:])
 
@@ -658,26 +537,26 @@ class Shell(shnake.Shell):
         """Environment variables handler.
 
         SYNOPSIS:
-            env [<NAME> ["<VALUE>"|None]]
+            env <name> <value>
 
         DESCRIPTION:
             Environment variables are meant to store informations
             about remote server state.
             - Their initial value is defined as soon as omega
-            opens a remote connection (`exploit`).
+            opens a remote connection (`run`).
             - Plugins can read, write, and create environment variables.
 
             > env
             - Display all current env vars
 
-            > env <STRING>
+            > env <string>
             - Display all env vars whose name starts with STRING.
 
-            > env <NAME> <VALUE>
-            - Set NAME env variable's value to VALUE.
+            > env <name> <value>
+            - Set name env variable's value to value.
 
-            > env <NAME> None
-            - Remove NAME with 'None' magic string.
+            > env <name> None
+            - Remove name with 'None' magic string.
 
         EXAMPLE:
             `PWD` is used to persist 'current working directory' of remote
@@ -704,11 +583,11 @@ class Shell(shnake.Shell):
         # `env [<NAME>]`
         if len(argv) < 3:
             if not session.Env:
-                print("[!] Must connect to spread env vars (`help exploit`).")
+                print("[!] Must connect to spread env vars.")
                 return False
             print(session.Env((argv + [""])[1]))
             return True
-        # `env <NAME> <VALUE>`
+        # `env <NAME> <value>`
         session.Env[argv[1]] = " ".join(argv[2:])
         return True
 
@@ -728,10 +607,10 @@ class Shell(shnake.Shell):
         """Attach a command to prompt.
 
         SYNOPSIS:
-            bind [<COMMAND>]
+            bind <command>
 
         DESCRIPTION:
-            Bind omega prompt to COMMAND.
+            Bind omega prompt to command.
             Every line executed will then be executed as if it was
             the arguments of COMMAND.
             This is useful for plugins like `run` or `mysql`, when you
@@ -741,12 +620,12 @@ class Shell(shnake.Shell):
             NOTE: press Ctrl-D or type exit to 'unbind' from current command.
 
         DEMO:
-            omega(127.0.0.1) > run type ls
+            omega(127.0.0.1)> run type ls
             ls is /bin/ls
-            omega(127.0.0.1) > type ls
-            [!] Unknown Command: type
-            omega(127.0.0.1) > bind run
-            [!] Type exit to leave binded 'run' subshell
+            omega(127.0.0.1)> type ls
+            [-] Unrecognized Command: type
+            omega(127.0.0.1)> bind run
+            [!] Type exit to leave binded 'run' subshell.
             # now shell is bound to `run`, so we just need to execute `type ls`
             omega(127.0.0.1) #run > type ls
             ls is /bin/ls
@@ -755,34 +634,7 @@ class Shell(shnake.Shell):
             self.interpret("help bind")
         else:
             self.bind_command = argv[1]
-            print("[!] Type exit to leave bound %r subshell" % argv[1])
-
-
-    ####################
-    # COMMAND: backlog #
-    def do_backlog(self, argv):
-        """Open last command output.
-
-        SYNOPSIS:
-            backlog [--save <FILE>]
-
-        DESCRIPTION:
-            Open last command output with text EDITOR (`help set EDITOR`).
-            Ansi terminal colors are automatically stripped from buffer.
-
-        OPTIONS:
-            --save <FILE>
-                Write previous command's output to the given
-                file instead of opening it with $EDITOR.
-        """
-        if len(argv) == 1:
-            backlog = Path()
-            backlog.write(self.stdout.backlog, bin_mode=True)
-            backlog.edit()
-        elif len(argv) == 3 and argv[1] == "--save":
-            Path(argv[2]).write(self.stdout.backlog)
-        else:
-            self.interpret("help backlog")
+            print("[!] Type exit to leave bound %r subshell." % argv[1])
 
 
     #################
@@ -799,12 +651,12 @@ class Shell(shnake.Shell):
         return self.completenames(text, line, *_)
 
     def do_help(self, argv):
-        """Show commands help.
+        """Show help information.
 
         SYNOPSIS:
             help
-            help <COMMAND>
-            help set <SETTING>
+            help <command>
+            help set <variable>
 
         DESCRIPTION:
             Get help for any core command or plugin.
@@ -813,7 +665,7 @@ class Shell(shnake.Shell):
             plugins, and aliases is displayed.
             Otherwise, detailed help of given command is shown.
 
-            * NOTE: plugins are only listed after running `exploit`
+            * NOTE: plugins are only listed after running `run`
 
         EXAMPLES:
             > help
@@ -870,16 +722,16 @@ class Shell(shnake.Shell):
             print(result)
             return True
 
-        # help set <VAR>
+        # help set <variable>
         if len(argv) >= 3 and argv[1] == "set":
             var = argv[2].upper()
             try:
                 doc = getattr(session.Conf, var).docstring
             except KeyError:
-                print("[!] %s: No such setting (run `set` to list settings)" \
+                print("[-] %s: No such variable!" \
                         % var)
                 return False
-            print("\n[*] Help for '%s' setting\n" % var)
+            print("\n[*] Help for %s variable:\n" % var)
             return doc_help(doc.splitlines())
 
         # help <COMMAND>
@@ -895,8 +747,7 @@ class Shell(shnake.Shell):
                     if not doc_help(doc):
                         return False
                 if argv[1] in session.Alias:
-                    print("[!] Warning: %r has been aliased "
-                          "(run `alias %s` for + infos)"
+                    print("[!] Warning: %r has been aliased."
                           % (argv[1], argv[1]))
                 return True
             # fallback to alias display

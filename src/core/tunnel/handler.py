@@ -280,7 +280,7 @@ class Request:
             len_third = int(round(len_third + 0.5))
             sample_sep = colorize("%Reset", "\n[*]", "%Cyan")
             lines = [''] + self.split_len(forwarder, len_third)
-            err = ("[*] do not enquotes the base64 payload which"
+            err = ("[*]Do not enquotes the base64 payload which"
                    " contains non alpha numeric chars (+ or /),"
                    " blocking execution:" + sample_sep.join(lines))
 
@@ -573,7 +573,7 @@ class Request:
         # if the is more than one possible target, display the one used for
         # this request(s). Also print if connecting through `exploit` cmd
         if self.is_first_payload or len(session.Conf.TARGET.choices()) > 1:
-            print("[*] Sending payload to %s ..." % self.target_obj)
+            print("[*] Sending payload to %s..." % self.target_obj)
 
         self.response = None
         self.response_error = None
@@ -802,7 +802,7 @@ class Request:
             if response['error']:
                 return response['error']
             # elif no data, nothing can be parsed
-            print("[!] Server response coudn't be unparsed"
+            print("[-] Server response coudn't be unparsed!"
                   " (maybe invalid PASSKEY ?)")
             # print payload forwarder error (if any)
             if self.payload_forwarder_error:

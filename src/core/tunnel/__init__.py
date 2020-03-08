@@ -51,7 +51,7 @@ class Tunnel:
                                 "sure you want to reset environment "
                                 "as shown above ?")
                     if ui.input.Expect(False)(question):
-                        print("[!] %s (%s): Exploitation aborted"
+                        print("[!] %s (%s): Exploitation aborted."
                               % (tmp_session.Env.ADDR, tmp_session.Env.HOST))
                         self.close()
                         return False
@@ -67,7 +67,7 @@ class Tunnel:
             print("Connected to %s server (%s)"
                   % (session.Env.PLATFORM.capitalize(),
                      session.Env.HOST))
-            print("running PHP %s on %s"
+            print("Running PHP %s on %s..."
                   % (session.Env.PHP_VERSION,
                      session.Env.HTTP_SOFTWARE))
             self.active = True
@@ -83,9 +83,9 @@ class Tunnel:
     def send(self, raw_payload):
         """run a payload on remote server"""
         if not self.active:
-            raise ValueError("cannot send() payload: tunnel is not active")
+            raise ValueError("Cannot send() payload: tunnel is not active!")
         if not self.socket:
-            raise ValueError("cannot send() payload: tunnel has no socket")
+            raise ValueError("Cannot send() payload: tunnel has no socket!")
         # request = handler.Request()
         request = handler.new_request()
         request.open(raw_payload)

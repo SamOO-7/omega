@@ -1,6 +1,6 @@
 """Time related functions
 
-Author: entynetproject
+Author: Entynetproject
 """
 
 import re

@@ -158,6 +158,7 @@ class Stdout:
         """
         tag_list = [('%BoldBlue', '[*] '),   # INFO
                     ('%BoldRed', '[-] '),    # ERROR
+                    ('%BoldGreen', '[+] '),  # SUCCESS
                     ('%BoldPink', '[?] '),   # QUESTION
                     ('%BoldYellow', '[!] '), # WARNING
                     ('%BoldBlack', '[#] ')]  # DEBUG

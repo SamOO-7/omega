@@ -3,7 +3,7 @@
 The functions described here provide some aditional features
 unavailable in the os.path standard module.
 
-Author: entynetproject
+Author: Entynetproject
 """
 
 import os
