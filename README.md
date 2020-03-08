@@ -23,6 +23,8 @@
  </a>
 </p>
 
+![omega](https://user-images.githubusercontent.com/54115104/76161167-a6f40580-6141-11ea-9cc4-d39a7a48fea1.png)
+
 ***
 
 # About Omega Framework
