@@ -495,7 +495,6 @@ class Shell(shnake.Shell):
             self.interpret("help bind")
         else:
             self.bind_command = argv[1]
-            print("[!] Type exit to leave bound %r subshell." % argv[1])
 
 
     #################
