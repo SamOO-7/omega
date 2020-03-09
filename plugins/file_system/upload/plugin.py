@@ -24,8 +24,8 @@ USAGE:
     upload <local_file> <remote_dir>
 
 OPTIONS:
-    -f      Overwrite destination without confirmation if it
-            already exists.
+    -f  Overwrite destination without confirmation if it
+        already exists.
 
 DESCRIPTION:
     Upload a local file to the remote server.
