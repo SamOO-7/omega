@@ -45,7 +45,7 @@ class Console:
     > print(len([1,2,3]))
     3
     """
-    def __init__(self, banner="Python console"):
+    def __init__(self, banner=""):
         self.banner = banner
 
     @isolate_readline_context
@@ -81,11 +81,10 @@ class Console:
         Used as fallback when neither of other consoles are available
         It basically consists in an exec(input("> ")) loop
         """
-        print(colorize("%BoldWhite", self.banner))
         while True:
             try:
                 # pylint: disable=exec-used
-                exec(input("> "))
+                exec(input(">>> "))
             except EOFError:
                 print()
                 return 0
