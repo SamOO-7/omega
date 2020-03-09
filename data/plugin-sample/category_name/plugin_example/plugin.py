@@ -1,6 +1,6 @@
 """Plugin's `plugin.py` file docstring (title line)
 
-SYNOPSIS:
+USAGE:
     plugin_example
 
 DESCRIPTION:
@@ -21,10 +21,6 @@ DESCRIPTION:
     following sections:
         SYNOPSIS
         DESCRIPTION
-        AUTHROS and/or MAINTAINERS
-
-AUTHORS:
-    entynetproject <http://goo.gl/kb2wf>
 """
 
 # standard library modules
