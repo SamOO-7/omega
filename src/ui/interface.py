@@ -273,6 +273,13 @@ class Shell(shnake.Shell):
         return result
 
     @staticmethod
+    def do_pymode(argv):
+        """Run Omega Framework python mode."""
+        from ui import console
+        console = console.Console()
+        return console()
+
+    @staticmethod
     def do_clear(argv):
         """Clear terminal window."""
         import os
