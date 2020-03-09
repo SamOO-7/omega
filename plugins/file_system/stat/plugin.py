@@ -21,14 +21,14 @@
 """Display file status.
 
 USAGE:
-    stat [-L] <FILE>
+    stat <remote_file>
 
 OPTIONS:
     -L
-        follow symbolic links
+        Follow symbolic links.
 
 DESCRIPTION:
-    Get remote file status informations
+    Get remote file status informations.
 """
 
 import sys
