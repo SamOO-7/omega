@@ -18,13 +18,13 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Remove a file
+"""Remove a remote file.
 
-SYNOPSIS:
-    rm <REMOTE-FILE>
+USAGE:
+    rm <remote_file>
 
 DESCRIPTION:
-    Remove REMOTE FILE from server.
+    Remove remote file from server.
 
 LIMITATIONS:
     Unlike the standard GNU's 'rm' tool, recursive
@@ -33,9 +33,6 @@ LIMITATIONS:
 EXAMPLES:
     > rm pdfs/r57.php
       - Remove "./pdfs/r75.php" file from remote server
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

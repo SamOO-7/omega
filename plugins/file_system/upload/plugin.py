@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Upload a file
+"""Upload a file.
 
-SYNOPSIS:
-    upload [-f] <LOCAL-FILE> [<REMOTE-DESTINATION>]
+USAGE:
+    upload <local_file> <remote_dir>
 
 OPTIONS:
     -f      Overwrite destination without confirmation if it
@@ -29,16 +29,14 @@ OPTIONS:
 
 DESCRIPTION:
     Upload a local file to the remote server.
-    - LOCAL-FILE must be readable.
-    - REMOTE-DESTINATION must be a writable file or directory.
-    - If REMOTE-DESTINATION is a directory, LOCAL-FILE will be
-    uploaded into it, preserving original file name.
-    - If REMOTE-DESTINATION is not provided, LOCAL-FILE is uploaded
+    - local file must be readable.
+    - remote directory must be a writable file or directory.
+    - If remote directory is not provided, local file is uploaded
     to remote current working directory (which can be known with
     the `pwd` command).
     - Unless '-f' option has been provided, user confirmation is
-    needed to overwrite REMOTE-DESTINATION (if it already exists).
-    NOTE: If the user confirms REMOTE-DESTINATION overwrite,
+    needed to overwrite remote directory (if it already exists).
+    NOTE: If the user confirms remote directory overwrite,
     another HTTP request will be sent to upload the file.
 
 LIMITATIONS:
@@ -54,9 +52,6 @@ EXAMPLES:
         working directory. If your location is a web root path
         which already contains an index.php, then you must
         answer to the confirmation request.
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Print working directory
+"""Print current directory.
 
-SYNOPSIS:
+USAGE:
     pwd
 
 DESCRIPTION:
@@ -30,9 +30,6 @@ DESCRIPTION:
     * PASSIVE PLUGIN:
     No requests are sent to server, as current directory
     is known by $PWD environment variable (`env PWD`)
-
-AUTHOR:
-    Entynetproject
 """
 
 from api import environ

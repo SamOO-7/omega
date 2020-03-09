@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Change file mode bits
+r"""Change file mode bits.
 
-SYNOPSIS:
-    chmod [MODE] <REMOTE FILE>
+USAGE:
+    chmod <mode> <remote_file>
 
 DESCRIPTION:
     The mode parameter consists of three octal number components
@@ -41,9 +41,6 @@ EXAMPLES:
       - Set chmod 755 to test.cgi
     > chmod 4222 /tmp/sploit
       - Grant execution and setuid bit on file
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

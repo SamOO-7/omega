@@ -18,17 +18,17 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Create directory
+"""Create a directory.
 
-SYNOPSIS:
-    mkdir [-p] <REMOTE-DIRECTORY>
+USAGE:
+    mkdir <remote_dir>
 
 OPTIONS:
     -p
         no error if existing, make parent directories as needed.
 
 DESCRIPTION:
-    The 'mkdir' plugin creates REMOTE-DIRECTORY. It reports
+    The 'mkdir' plugin creates remote directory. It reports
     an error if it already exists.
     - Unless '-p' option is provided, parent directory must exist.
 
@@ -45,9 +45,6 @@ EXAMPLES:
       - Create the 'thumb' directory even if parent don't exist
     > mkdir -p /var/www/a/b/c/d/e/f/g/h/
       - Create 'h/' directory, and parent directories as needed.
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

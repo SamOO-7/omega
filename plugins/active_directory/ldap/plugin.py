@@ -18,24 +18,24 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Client for ldap
+"""Client for ldap.
 
-SYNOPSIS:
-    ldap connect <HOST> [<LOGIN> <PASSWORD>]
+USAGE:
+    ldap connect <host> <username> <password>
     ldap list <DN>
-    ldap search <DN> <FILTER>
-    ldap set [<KEY> <VAL>]
+    ldap search <DN> <filter>
+    ldap set <key> <value>
 
 DESCRIPTION:
-    > ldap connect <HOST> [<LOGIN> <PASSWORD>]
+    > ldap connect <host> <username> <password>
         Connect to service
     > ldap list <DN>
         List node
-    > ldap search <DN> <FILTER>
+    > ldap search <DN> <filter>
         Find node based on filter
     > ldap set
         List env var
-    > ldap set <KEY> <VAL>
+    > ldap set <key> <value>
         Set env var
 EXAMPLES:
     > ldap connect 10.0.0.100
@@ -46,9 +46,6 @@ EXAMPLES:
     > ldap search "dc=example,dc=org" "userpassword=*"
     > ldap set VERSION 3
       - Set LDAP protocol V3
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys

@@ -18,11 +18,11 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""A client for Oracle PL/SQL databases
+r"""A client for Oracle PL/SQL databases.
 
-SYNOPSIS:
-    oracle connect <USER> <PASSWORD> "<CONNSTR>"
-    oracle connect <USER> <PASSWORD> "<CONNSTR>" [<CHARSET>]
+USAGE:
+    oracle connect <username> <password> "<CONNSTR>"
+    oracle connect <username> <password> "<CONNSTR>" <CHARSET>
     oracle "<SQL COMMAND>"
 
 DESCRIPTION:
@@ -60,9 +60,6 @@ EXAMPLES:
 ENVIRONMENT:
     * ORACLE_CRED
         Oracle connection credentials
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys
@@ -110,7 +107,7 @@ if len(plugin.argv) < 2:
     sys.exit(plugin.help)
 
 
-# `oracle connect <USER> <PASSWORD> "<CONNSTR>" [<CHARSET>]`
+# `oracle connect <username> <password> "<CONNSTR>" <CHARSET>`
 # Connect to a oracle server with credentials.
 # This comment creates or updates the ORACLE_CRED
 # environment variable.

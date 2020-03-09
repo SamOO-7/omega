@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""TCP port scanner
+"""TCP port scanner.
 
-SYNOPSIS:
-    portscan <HOST> [-p <PORT>] [-t <TIMEOUT>]
+USAGE:
+    portscan <host> [-p <PORT> [-t <TIMEOUT>
 
 OPTIONS:
     -p <PORT>
@@ -43,9 +43,6 @@ EXAMPLES:
       - find if ports 50 to 100 are open
     > portscan 192.168.1.10 -t 0.5
       - scan with 0.5 second timeout per socket
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys

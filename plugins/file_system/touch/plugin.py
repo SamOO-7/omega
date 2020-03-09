@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Change file timestamps
+"""Change file timestamps.
 
-SYNOPSIS:
-    touch [OPTION]... <REMOTE-FILE>
+USAGE:
+    touch [OPTION]... <remote_file>
 
 OPTIONS:
     -t <STAMP>
@@ -33,10 +33,10 @@ OPTIONS:
         use this remote file's times instead of current time
 
 DESCRIPTION:
-    Update the access and modification times of REMOTE-FILE
+    Update the access and modification times of remote file
     to the current time.
 
-    If REMOTE-FILE does not exist, it is created empty.
+    If remote file does not exist, it is created empty.
 
 EXAMPLES:
     > touch file.txt
@@ -47,9 +47,6 @@ EXAMPLES:
       - Set file atime/mtime to a random date in 2015
     > touch -r old.php new.php
       - Set `new.php`'s times to same values as `old.php`
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

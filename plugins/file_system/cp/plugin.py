@@ -18,23 +18,21 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Copy a file between two remote paths
+r"""Copy a file.
 
-SYNOPSIS:
-    cp [-f] <REMOTE-FILE> <REMOTE-DESTINATION>
+USAGE:
+    cp <remote_file> <remote_dir>
 
 OPTIONS:
     -f
-        overwrite REMOTE-DESTINATION without user confirmation.
+        overwrite remote directory without user confirmation.
 
 DESCRIPTION:
     Copy a remote file to another remote destination.
-    - REMOTE-FILE must be readable.
-    - REMOTE-DESTINATION must be a writable file or directory.
-    - If REMOTE-DESTINATION is a directory, REMOTE-FILE will
-    be copied into it, preserving original file name.
+    - remote file must be readable.
+    - remote directory must be a writable directory.
     - Unless '-f' option has been provided, user confirmation is
-    needed to overwrite REMOTE-DESTINATION (if it already exists).
+    needed to overwrite remote directory (if it already exists).
 
 LIMITATIONS:
     Unlike the standard GNU's 'cp' tool, recursive directory
@@ -45,9 +43,6 @@ EXAMPLES:
       - Copy an exploit to a stealth location, force copy.
     > cp \Bach\LOG\ex191213.zip C:\intepub\wwwroot\x.zip
       - Copy this interesting file to a web accessible path.
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Execute a command on remote server
+"""Execute a command on remote server.
 
-SYNOPSIS:
+USAGE:
     exec "<SHELL-COMMAND>"
 
 DESCRIPTION:
@@ -64,9 +64,6 @@ EXAMPLES:
     > exec "cat /etc/passwd | grep root; ls /tmp"
       - Just a multi command, which must be quoted because
         of the semicolon (see WARNING)
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys

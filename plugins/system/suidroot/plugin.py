@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Setuid backdoor handler
+"""Setuid backdoor handler.
 
-SYNOPSIS:
+USAGE:
     suidroot --create <backdoor>
     suidroot <command>
 
@@ -68,9 +68,6 @@ ENVIRONMENT:
         The setuid(2) backdoor file
     * SUIDROOT_PWD
         Current working directory for privileged user
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys

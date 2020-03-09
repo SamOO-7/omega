@@ -18,13 +18,13 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Print a file content on standard output
+r"""Print a file content.
 
-SYNOPSIS:
-    cat <REMOTE-FILE>
+USAGE:
+    cat <remote_file>
 
 DESCRIPTION:
-    Print REMOTE-FILE content on standard output.
+    Print a file content.
 
 LIMITATIONS:
     Unlike the standard GNU's 'cat' tool, multiple files cat
@@ -37,9 +37,6 @@ EXAMPLES:
       - Don't be evil with grannies!
       - As gannies use spaces in file names, the path
         must be quoted to be parsed as a single argument.
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

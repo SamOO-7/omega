@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Change directory
+r"""Change current directory.
 
-SYNOPSIS:
-    cd [<DIRECTORY>]
+USAGE:
+    cd <remote_dir>
 
 DESCRIPTION:
     Change current working directory of omega target.
@@ -51,9 +51,6 @@ WARNING:
     this plugin.
     - Therefore, in a few use cases, manual edition of the $PWD
     variable is the only option.
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

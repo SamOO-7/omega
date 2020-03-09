@@ -18,10 +18,10 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""A client for Microsoft SQL Server
+r"""A client for Microsoft SQL Server.
 
-SYNOPSIS:
-    mssql connect <USERNAME>@<HOSTNAME> [-p <PASSWORD>]
+USAGE:
+    mssql connect <USERNAME>@<HOSTNAME> [-p <password>
     mssql show [databases|tables]
     mssql use <DATABASE>
     mssql "<SQL COMMAND>"
@@ -67,9 +67,6 @@ ENVIRONMENT:
         mssql's connection credentials
     * MSSQL_BASE
         mssql's default database to use
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys
@@ -100,7 +97,7 @@ if len(plugin.argv) < 2:
     sys.exit(plugin.help)
 
 
-# `mssql connect <USERNAME>@<HOSTNAME> [-p <PASSWORD>]`
+# `mssql connect <USERNAME>@<HOSTNAME> [-p <password>`
 # Connect to a mssql server with credentials.
 # This comment creates or updates the MSSQL_CRED
 # environment variable.

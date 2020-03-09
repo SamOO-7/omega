@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Display file status
+"""Display file status.
 
-SYNOPSIS:
+USAGE:
     stat [-L] <FILE>
 
 OPTIONS:
@@ -29,9 +29,6 @@ OPTIONS:
 
 DESCRIPTION:
     Get remote file status informations
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

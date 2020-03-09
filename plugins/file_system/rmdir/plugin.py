@@ -18,16 +18,13 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Remove empty directory
+"""Remove remote directory.
 
-SYNOPSIS:
-    rmdir <REMOTE-DIRECTORY>
+USAGE:
+    rmdir <remote_dir>
 
 DESCRIPTION:
-    Remove REMOTE-DIRECTORY if it is empty.
-
-AUTHOR:
-    Entynetproject
+    Remove remote directory if it is empty.
 """
 
 import sys

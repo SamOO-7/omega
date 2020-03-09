@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Print effective userid
+"""Print effective user ID.
 
-SYNOPSIS:
+USAGE:
     whoami
 
 DESCRIPTION:
@@ -30,9 +30,6 @@ DESCRIPTION:
     * PASSIVE PLUGIN:
     No requests are sent to server, as current user
     is known by $USER environment variable (`env USER`);
-
-DEVELOPER:
-    Entunetproject
 """
 
 from api import environ

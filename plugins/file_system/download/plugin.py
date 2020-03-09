@@ -18,26 +18,23 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Download a remote file
+r"""Download a remote file.
 
-SYNOPSIS:
-    download [-f] <REMOTE-FILE> [<LOCAL-PATH>]
+USAGE:
+    download <remote_file> <local_dir>
 
 OPTIONS:
     -f
-        overwrite LOCAL-PATH without user confirmation.
+        overwrite local directory without user confirmation.
 
 DESCRIPTION:
     Download a remote file to your local system.
-    - REMOTE-FILE must be readable.
-    - LOCAL-PATH must be a writable file or directory.
-    - If LOCAL-PATH is a directory, REMOTE-FILE will be downloaded
-    into it, preserving original file name.
-    - if LOCAL-PATH is not provided, REMOTE-FILE is downloaded
-    to attacker's current working directory (which can be known
-    with `lrun pwd` command).
+    - remote file must be readable.
+    - local directory must be a writable directory.
+    - if local directory is not provided, remote file is downloaded
+    to the Omega Framework directory.
     - Unless '-f' option has been provided, user confirmation is
-    needed to overwrite LOCAL-PATH (if it already exists).
+    needed to overwrite local directory (if it already exists).
 
 LIMITATIONS:
     Recursive directory and multiple file downloads are not available.
@@ -49,9 +46,6 @@ EXAMPLES:
       - Download the current remote passwd file and force copy
     > download /srv/www/inc/sql.php
       - Download the sql.php file to the current local directory
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

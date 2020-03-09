@@ -18,13 +18,13 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""Edit a remote file with local text editor
+r"""Edit a remote file.
 
-SYNOPSIS:
-    edit <REMOTE-FILE>
+USAGE:
+    edit <remote_file>
 
 DESCRIPTION:
-    Open and Edit REMOTE-FILE content with your favorite editor.
+    Open and Edit remote file content with your favorite editor.
 
     - After editing the file (and only if it changed), the plugin
     uploads the new file content to the remote server.
@@ -38,9 +38,6 @@ DESCRIPTION:
 EXAMPLES:
     > edit ../includes/connect.inc.php
       - Open remote file within local text EDITOR
-
-AUTHOR:
-    Entynetproject
 """
 
 import sys

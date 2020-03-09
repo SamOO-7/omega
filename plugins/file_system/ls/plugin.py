@@ -18,15 +18,15 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-r"""List directory contents
+r"""List directory contents.
 
-SYNOPSIS:
-    ls [<REMOTE-PATH>] ...
+USAGE:
+    ls <remote_dir>
 
 DESCRIPTION:
-    List the contents of REMOTE-PATH.
+    List the contents of remote directory.
 
-    - If REMOTE-PATH does not exist, its `basename` is considered
+    - If remote directory does not exist, its `basename` is considered
     a regex pattern, allowing basename wildcards.
     # Example: list all .txt files in /tmp:
     > ls /tmp/*.txt

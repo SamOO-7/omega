@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Output information about PHP's configuration
+"""Show information about PHP configuration.
 
-SYNOPSIS:
+USAGE:
     phpinfo [--browser]
 
 OPTIONS:
@@ -30,9 +30,6 @@ OPTIONS:
 DESCRIPTION:
     Display the remote server's phpinfo() data in tabular
     text, formatted for the terminal.
-
-DEVELOPER:
-    Entynetproject
 """
 
 import sys
