@@ -25,12 +25,12 @@ USAGE:
 
 OPTIONS:
     -t <stamp> 
-  Use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
+        Use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
         NOTE: If partially defined (e.g: yyyy/mm only), other
               values will be randomly chosen, because random values
               are always less suspicious than 00:00:00
     -r <ref_file>
-        use this remote file's times instead of current time
+        Use this remote file times instead of current time
 
 DESCRIPTION:
     Update the access and modification times of remote file
