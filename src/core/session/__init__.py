@@ -1,20 +1,23 @@
-"""Omega Session Manager
+#!/usr/bin/env python3
 
-When imorted for the first time, the "session" package initializes it
-self as a Omega blank session, with its default values.
+#            ---------------------------------------------------
+#                              Omega Framework                                
+#            ---------------------------------------------------
+#                  Copyright (C) <2020>  <Entynetproject>       
+#
+#        This program is free software: you can redistribute it and/or modify
+#        it under the terms of the GNU General Public License as published by
+#        the Free Software Foundation, either version 3 of the License, or
+#        any later version.
+#
+#        This program is distributed in the hope that it will be useful,
+#        but WITHOUT ANY WARRANTY; without even the implied warranty of
+#        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#        GNU General Public License for more details.
+#
+#        You should have received a copy of the GNU General Public License
+#        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-
-Provide the Omega framework's session object from Session() class.
-On import, an instance of it is defaultly created as `session`.
-
-A session instance contains the following objects:
-    * Conf  -> The configuration settings
-    * Env   -> Tunnel related environment variables
-    * Alias -> User's command aliases
-    * File  -> The default file that binds to session
-    * Cache -> Remote server response cache
-    * Hist  -> Readline history
-"""
 import os
 import re
 import gzip
