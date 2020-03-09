@@ -24,8 +24,8 @@ USAGE:
     touch <remote_file>
 
 OPTIONS:
-    -t <stamp>
-        Use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
+    -t <stamp> 
+  Use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
         NOTE: If partially defined (e.g: yyyy/mm only), other
               values will be randomly chosen, because random values
               are always less suspicious than 00:00:00
