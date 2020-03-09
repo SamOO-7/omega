@@ -176,7 +176,7 @@ class Shell(shnake.Shell):
         """Exit Omega Framework.
 
         USAGE:
-            exit [--force]
+            exit
 
         OPTIONS:
             --force
@@ -186,7 +186,7 @@ class Shell(shnake.Shell):
                 or has changed since last save.
 
         DESCRIPTION:
-            If current omega session is connected to $TARGET,
+            If current omega session is connected to target,
             this command disconnects the user from remote session.
             Otherwise, if the interface is not connected, this
             command leaves the omega framework.
