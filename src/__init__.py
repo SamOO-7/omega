@@ -1,23 +1,16 @@
-#!/usr/bin/env python3
+"""Omega framework core loader.
 
-#            ---------------------------------------------------
-#                              Omega Framework                                
-#            ---------------------------------------------------
-#                  Copyright (C) <2020>  <Entynetproject>       
-#
-#        This program is free software: you can redistribute it and/or modify
-#        it under the terms of the GNU General Public License as published by
-#        the Free Software Foundation, either version 3 of the License, or
-#        any later version.
-#
-#        This program is distributed in the hope that it will be useful,
-#        but WITHOUT ANY WARRANTY; without even the implied warranty of
-#        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#        GNU General Public License for more details.
-#
-#        You should have received a copy of the GNU General Public License
-#        along with this program.  If not, see <http://www.gnu.org/licenses/>.
+This pseudo module is designed to be imported (import lib) from
+the omega script launcher (./omega).
+It also can be imported from omega root directory through a
+python interpreter for debugging purposes.
 
+It loads the omega core, spreading required dependencies
+(./deps directory) then overwriting sys.path's first element to
+the current directory (./lib/), making all self contained elements
+directly importable from python.
+
+"""
 import os
 import sys
 
