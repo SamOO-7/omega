@@ -25,7 +25,7 @@ USAGE:
 
 OPTIONS:
     -p
-        no error if existing, make parent directories as needed.
+        No error if existing, make parent directories as needed.
 
 DESCRIPTION:
     The 'mkdir' plugin creates remote directory. It reports
