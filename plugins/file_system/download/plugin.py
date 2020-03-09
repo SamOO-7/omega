@@ -25,7 +25,7 @@ USAGE:
 
 OPTIONS:
     -f
-        overwrite local directory without user confirmation.
+        Overwrite local directory without user confirmation.
 
 DESCRIPTION:
     Download a remote file to your local system.
@@ -40,9 +40,9 @@ LIMITATIONS:
     Recursive directory and multiple file downloads are not available.
 
 EXAMPLES:
-    > download C:\boot.ini /tmp/pentest/
+    > download C:\boot.ini /tmp
       - Download the remote boot.ini file into your local dir
-    > download -f /etc/passwd ./hacked-etcpasswd.txt
+    > download -f /etc/passwd /tmp
       - Download the current remote passwd file and force copy
     > download /srv/www/inc/sql.php
       - Download the sql.php file to the current local directory
