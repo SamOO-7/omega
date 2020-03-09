@@ -1,0 +1,24 @@
+"""
+Set the maximum omega session file size.
+
+While using the omega framework, some usage informations
+are stored, such as commands history.
+Changing this limit ensures that the session, if saved whith
+`session save` command will not exceed a certain size.
+
+* USE CASES:
+omega's history uses this value to determine the maximum
+number of command lines to store in session file.
+"""
+import linebuf
+import datatypes
+
+linebuf_type = linebuf.MultiLineBuffer
+
+
+def validator(value):
+    return datatypes.ByteSize(value)
+
+
+def default_value():
+    return "1 MiB"
