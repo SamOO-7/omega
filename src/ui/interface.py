@@ -175,7 +175,7 @@ class Shell(shnake.Shell):
     def do_exit(self, argv):
         """Exit Omega Framework.
 
-        SYNOPSIS:
+        USAGE:
             exit [--force]
 
         OPTIONS:
@@ -209,10 +209,6 @@ class Shell(shnake.Shell):
                     session_changed = session.diff(None)
                 except OSError:
                     session_changed = bool(tunnel.has_been_active())
-                if session_changed:
-                    msg = "Do you really want to exit without saving session ?"
-                    if ui.input.Expect(False)(msg):
-                        return False
             exit()
         return True # make pylint happy
 
@@ -230,8 +226,8 @@ class Shell(shnake.Shell):
     def do_run(self, argv):
         """Spawn a shell from target server.
 
-        SYNOPSIS:
-            run [--get-backdoor]
+        USAGE:
+            run
 
         DESCRIPTION:
             Connect to remote target URL (`help set TARGET`).
@@ -315,7 +311,7 @@ class Shell(shnake.Shell):
     def do_set(argv):
         """Edit configuration settings.
 
-        SYNOPSIS:
+        USAGE:
             set <variable> <value>
 
         DESCRIPTION:
@@ -424,7 +420,7 @@ class Shell(shnake.Shell):
     def do_env(argv):
         """Show environment variables.
 
-        SYNOPSIS:
+        USAGE:
             env <name> <value>
 
         DESCRIPTION:
@@ -494,7 +490,7 @@ class Shell(shnake.Shell):
     def do_bind(self, argv):
         """Attach a command to prompt.
 
-        SYNOPSIS:
+        USAGE:
             bind <command>
 
         DESCRIPTION:
@@ -540,7 +536,7 @@ class Shell(shnake.Shell):
     def do_help(self, argv):
         """Show help information.
 
-        SYNOPSIS:
+        USAGE:
             help
             help <command>
             help set <variable>
