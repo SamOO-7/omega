@@ -402,7 +402,7 @@ class Shell(shnake.Shell):
 
     @staticmethod
     def do_env(argv):
-        """Environment variables handler.
+        """Show environment variables.
 
         SYNOPSIS:
             env <name> <value>
