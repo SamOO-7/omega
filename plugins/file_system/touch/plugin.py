@@ -21,15 +21,15 @@
 """Change file timestamps.
 
 USAGE:
-    touch [OPTION]... <remote_file>
+    touch <remote_file>
 
 OPTIONS:
-    -t <STAMP>
-        use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
+    -t <stamp>
+        Use YYYY[-mm[-dd[ HH[:MM[:SS]]]]] instead of current time
         NOTE: If partially defined (e.g: yyyy/mm only), other
               values will be randomly chosen, because random values
               are always less suspicious than 00:00:00
-    -r <REF-FILE>
+    -r <ref_file>
         use this remote file's times instead of current time
 
 DESCRIPTION:
