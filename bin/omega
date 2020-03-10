@@ -40,7 +40,7 @@ chmod +x omega
 {
 if [[ -f ~/omega/.updated ]]
 then
-sleep 0
+rm ~/omega/.updated
 else
 cd ~/omega
 mkdir etc/.disabled
@@ -82,7 +82,7 @@ chmod +x omega
 {
 if [[ -f ~/omega/.updated ]]
 then
-sleep 0
+rm ~/omega/.updated
 else
 cd ~/omega
 mkdir etc/.disabled
