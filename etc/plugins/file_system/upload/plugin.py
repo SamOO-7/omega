@@ -64,6 +64,9 @@ from api import server
 if not 2 <= len(plugin.argv) <= 4:
     sys.exit(plugin.help)
 
+w = os.environ['OLDPWD']
+os.chdir(w)
+
 if plugin.argv[1] == "-f":
     force = True
     arg1 = 2
@@ -87,14 +90,20 @@ local_basename = os.path.basename(local_abspath)
 
 # check for errors
 if not os.path.exists(local_abspath):
+    g = os.environ['HOME']
+    os.chdir(g + "/omega")
     sys.exit("Can't upload %s: No such file or directory" % local_abspath)
 
 if not os.path.isfile(local_abspath):
+    g = os.environ['HOME']
+    os.chdir(g + "/omega")
     sys.exit("Can't upload %s: Not a file" % local_abspath)
 
 try:
     data = open(local_abspath, 'rb').read()
 except OSError as e:
+    g = os.environ['HOME']
+    os.chdir(g + "/omega")
     sys.exit("Can't upload %s: %s" % (e.filename, e.strerror))
 
 # send the payload (twice if needed)
@@ -113,9 +122,13 @@ for iteration in [1, 2]:
     if status == 'KO':
         question = "Remote destination %s already exists, overwrite it ?"
         if ui.input.Expect(False)(question % uploaded_file):
+            g = os.environ['HOME']
+            os.chdir(g + "/omega")
             sys.exit("File transfer aborted!")
         else:
             continue
 
     print("[+] File successfully uploaded!")
+    g = os.environ['HOME']
+    os.chdir(g + "/mouse")
     sys.exit(0)
