@@ -102,7 +102,7 @@ if not environ['PLATFORM'].lower().startswith("win"):
         payload["CMD"] += " ; "
     payload['CMD'] += "echo ; echo AzXB `pwd` AzXB"
 
-print("[#] raw command: %r" % payload['CMD'])
+print("[v] raw command: %r" % payload['CMD'])
 
 output = payload.send()
 lines = output.splitlines()

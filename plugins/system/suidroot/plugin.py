@@ -145,7 +145,7 @@ payload = server.payload.Payload("payload.php")
 payload['BACKDOOR'] = "/////////" + environ['SUIDROOT_BACKDOOR']
 payload['COMMAND'] = repr(command)
 
-print("[#] raw command: %r" % command)
+print("[v] raw command: %r" % command)
 
 output = payload.send()
 lines = output.splitlines()

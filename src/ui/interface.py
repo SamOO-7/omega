@@ -101,7 +101,7 @@ class Shell(shnake.Shell):
             print("[!]          please upgrade $TARGET with new $BACKDOOR")
             print("[!]          and run `session upgrade` when done.")
             print("")
-        print("[#] %s: Running..." % self.debug_cmdrepr(argv))
+        print("[v] %s: Running..." % self.debug_cmdrepr(argv))
         return super().onecmd(argv)
 
     def postcmd(self, retval, argv):
@@ -110,7 +110,7 @@ class Shell(shnake.Shell):
         Redraw shell prompt
         """
         int_retval = self.return_errcode(retval)
-        print("[#] %s: Returned %d" % (self.debug_cmdrepr(argv), int_retval))
+        print("[v] %s: Returned %d" % (self.debug_cmdrepr(argv), int_retval))
         # redraw shell prompt after each command
         prompt_elems = ["%Lined", "omega"]
         if tunnel:
@@ -151,7 +151,7 @@ class Shell(shnake.Shell):
                 break
         self.last_exception = "".join(exc).splitlines()
         for line in self.last_exception:
-            print(colorize("[#] ", "%Red", line))
+            print(colorize("[v] ", "%Red", line))
         return super().onexception(exception)
 
     def default(self, argv):

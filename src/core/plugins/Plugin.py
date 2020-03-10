@@ -56,9 +56,9 @@ class Plugin:
         try:
             Path(path, mode='drx')()
         except ValueError as e:
-            print("[#] Couldn't load plugin: «%s»" % self.path)
-            print("[#]     Plugin directory error: %s" % e)
-            print("[#] ")
+            print("[v] Couldn't load plugin: «%s»" % self.path)
+            print("[v]     Plugin directory error: %s" % e)
+            print("[v] ")
             raise BadPlugin
 
         category = os.path.basename(os.path.dirname(path))
@@ -68,24 +68,24 @@ class Plugin:
         try:
             script = Path(self.path, "plugin.py", mode='fr').read()
         except ValueError as e:
-            print("[#] Couldn't load plugin: «%s»" % self.path)
-            print("[#]     File error on plugin.py: %s" % e)
-            print("[#] ")
+            print("[v] Couldn't load plugin: «%s»" % self.path)
+            print("[v]     File error on plugin.py: %s" % e)
+            print("[v] ")
             raise BadPlugin
         if not script.strip():
-            print("[#] Couldn't load plugin: «%s»" % self.path)
-            print("[#]     File plugin.py is empty")
-            print("[#] ")
+            print("[v] Couldn't load plugin: «%s»" % self.path)
+            print("[v]     File plugin.py is empty")
+            print("[v] ")
             raise BadPlugin
         try:
             code = compile(script, "", "exec")
         except BaseException as e:
-            print("[#] Couldn't compile plugin: «%s»" % self.path)
+            print("[v] Couldn't compile plugin: «%s»" % self.path)
             e = traceback.format_exception(type(e), e, e.__traceback__)
             for line in "".join(e).splitlines():
-                print(colorize("[#] ", "%Red", line))
-            # print("[#] " + "\n[#] ".join("".join(e).splitlines()))
-            print("[#] ")
+                print(colorize("[v] ", "%Red", line))
+            # print("[v] " + "\n[v] ".join("".join(e).splitlines()))
+            print("[v] ")
             raise BadPlugin
         if "__doc__" in code.co_names:
             self.help = code.co_consts[0]

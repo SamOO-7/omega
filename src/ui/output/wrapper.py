@@ -114,7 +114,7 @@ class Stdout:
         #       write() to add line separator, we need a self._write_lock
         #       canary to block it if the previous message display aborted.
         from core import session
-        if line.startswith("[#] ") and not session.Conf.VERBOSITY():
+        if line.startswith("[v] ") and not session.Conf.VERBOSITY():
             self._write_lock = True
             return
         if self._write_lock:
@@ -176,12 +176,12 @@ class Stdout:
         >>> process_tags("[*] FOO: «bar»\\n")
         '\\x1b[1m\\x1b[34m[*]\\x1b[0m FOO: \\x1b[37m«bar»\\x1b[0m\\n'
         """
-        tag_list = [('%BoldBlue', '[*] '),   # INFO
-                    ('%BoldRed', '[-] '),    # ERROR
-                    ('%BoldGreen', '[+] '),  # SUCCESS
-                    ('%BoldPink', '[?] '),   # QUESTION
-                    ('%BoldYellow', '[!] '), # WARNING
-                    ('%BoldBlack', '[#] ')]  # DEBUG
+        tag_list = [('\033[1;34m', '[*] '),   # INFO
+                    ('\033[1;31m', '[-] '),    # ERROR
+                    ('\033[1;32m', '[+] '),  # SUCCESS
+                    ('\033[1;77m', '[?] '),   # QUESTION
+                    ('\033[1;33m', '[!] '), # WARNING
+                    ('\033[1;77m', '[v] ')]  # DEBUG
 
         # if not tagged, return the line as it is
         tag = None # make pylint happy
