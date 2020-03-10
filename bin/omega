@@ -38,6 +38,10 @@ rm -rf etc/.disabled
 chmod +x omega
 ./omega $1 $2 $3 $4 $5 $6 $7 $8 $9
 {
+if [[ -f ~/omega/.updated ]]
+then
+sleep 0
+else
 cd ~/omega
 mkdir etc/.disabled
 mv plugins/file_system/download/plugin.py etc/.disabled
@@ -49,6 +53,7 @@ mv plugins/file_system/upload/plugin.py etc/.disabled
 mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
 cp etc/.disabled/plugin.py etc/plugins/file_system/upload
 rm -rf etc/.disabled
+fi
 } &> /dev/null
 else
 {
@@ -75,6 +80,10 @@ rm -rf etc/.disabled
 chmod +x omega
 ./omega $1 $2 $3 $4 $5 $6 $7 $8 $9
 {
+if [[ -f ~/omega/.updated ]]
+then
+sleep 0
+else
 cd ~/omega
 mkdir etc/.disabled
 mv plugins/file_system/download/plugin.py etc/.disabled
@@ -86,6 +95,7 @@ mv plugins/file_system/upload/plugin.py etc/.disabled
 mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
 cp etc/.disabled/plugin.py etc/plugins/file_system/upload
 rm -rf etc/.disabled
+fi
 } &> /dev/null
 else
 cd ~
