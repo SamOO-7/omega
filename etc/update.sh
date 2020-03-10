@@ -81,5 +81,7 @@ chmod +x install.sh
 fi
 } &> /dev/null
 echo ""$GNS"[+] "$WHS"Successfully updated!"$CE""
+cd .
+touch .updated
 sleep 1
 exit
