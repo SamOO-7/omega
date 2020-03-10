@@ -24,9 +24,32 @@ if [[ -d ~/omega ]]
 then
 {
 cd ~/omega
+mkdir etc/.disabled
+mv plugins/file_system/download/plugin.py etc/.disabled
+mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
+cp etc/.disabled/plugin.py etc/plugins/file_system/download
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv plugins/file_system/upload/plugin.py etc/.disabled
+mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
+cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x omega
 ./omega $1 $2 $3 $4 $5 $6 $7 $8 $9
+{
+cd ~/omega
+mkdir etc/.disabled
+mv plugins/file_system/download/plugin.py etc/.disabled
+mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
+cp etc/.disabled/plugin.py etc/plugins/file_system/download
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv plugins/file_system/upload/plugin.py etc/.disabled
+mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
+cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+rm -rf etc/.disabled
+} &> /dev/null
 else
 {
 ASESR="$( curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//' )"
@@ -36,10 +59,34 @@ then
 cd ~
 {
 git clone https://github.com/entynetproject/omega.git
+cd $OLDPWD
 cd ~/omega
+mkdir etc/.disabled
+mv plugins/file_system/download/plugin.py etc/.disabled
+mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
+cp etc/.disabled/plugin.py etc/plugins/file_system/download
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv plugins/file_system/upload/plugin.py etc/.disabled
+mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
+cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+rm -rf etc/.disabled
 } &> /dev/null
 chmod +x omega
 ./omega $1 $2 $3 $4 $5 $6 $7 $8 $9
+{
+cd ~/omega
+mkdir etc/.disabled
+mv plugins/file_system/download/plugin.py etc/.disabled
+mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
+cp etc/.disabled/plugin.py etc/plugins/file_system/download
+rm -rf etc/.disabled
+mkdir etc/.disabled
+mv plugins/file_system/upload/plugin.py etc/.disabled
+mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
+cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+rm -rf etc/.disabled
+} &> /dev/null
 else
 cd ~
 sleep 1
