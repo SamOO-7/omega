@@ -273,6 +273,7 @@ class Shell(shnake.Shell):
         """Update Omega Framework."""
         import os
         os.system("chmod +x etc/update.sh && etc/update.sh")
+        os.system("cd . && touch .updated")
     
     ################
     # COMMAND: set #
