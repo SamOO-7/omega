@@ -118,9 +118,9 @@ for iteration in [1, 2]:
     if status == 'KO':
         question = "Remote destination %s already exists, overwrite it ?"
         if ui.input.Expect(False)(question % uploaded_file):
-            sys.exit("File transfer aborted")
+            sys.exit("File transfer aborted!")
         else:
             continue
 
-    print("[+] Upload complete!")
+    print("[+] File successfully uploaded!")
     sys.exit(0)
