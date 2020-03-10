@@ -130,5 +130,5 @@ for iteration in [1, 2]:
 
     print("[+] File successfully uploaded!")
     g = os.environ['HOME']
-    os.chdir(g + "/mouse")
+    os.chdir(g + "/omega")
     sys.exit(0)
