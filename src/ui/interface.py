@@ -65,8 +65,8 @@ class Shell(shnake.Shell):
             pass
 
     def init(self):
-        """omega interface init"""
-        # load omega plugins list
+        """Omega interface init"""
+        # load Omega plugins list
         plugins.blacklist = self.get_names(self, "do_")
         plugins.reload(verbose=False)
 
@@ -186,10 +186,10 @@ class Shell(shnake.Shell):
                 or has changed since last save.
 
         DESCRIPTION:
-            If current omega session is connected to target,
+            If current Omega session is connected to target,
             this command disconnects the user from remote session.
             Otherwise, if the interface is not connected, this
-            command leaves the omega framework.
+            command leaves the Omega Framework.
         """
         if len(argv) == 2 and argv[1] == "--force":
             force_exit = True
@@ -233,7 +233,7 @@ class Shell(shnake.Shell):
             Connect to remote target URL (`help set TARGET`).
 
             If backdoor (`run --get-backdoor`) is correctly
-            injected in target URL, omega spawns a remote shell.
+            injected in target URL, Omega spawns a remote shell.
 
         OPTIONS:
             --get-backdoor
@@ -316,10 +316,10 @@ class Shell(shnake.Shell):
 
         DESCRIPTION:
             Settings are a collection of editable variables that affect
-            omega's core behavior.
+            Omega core behavior.
             - Their value is bound to current session.
             - To permanently change a setting's value at start, it
-            must be defined by hand on omega config file.
+            must be defined by hand on Omega config file.
 
             > set
               - Display current settings
@@ -426,7 +426,7 @@ class Shell(shnake.Shell):
         DESCRIPTION:
             Environment variables are meant to store informations
             about remote server state.
-            - Their initial value is defined as soon as omega
+            - Their initial value is defined as soon as Omega
             opens a remote connection (`run`).
             - Plugins can read, write, and create environment variables.
 
@@ -494,7 +494,7 @@ class Shell(shnake.Shell):
             bind <command>
 
         DESCRIPTION:
-            Bind omega prompt to command.
+            Bind Omega prompt to command.
             Every line executed will then be executed as if it was
             the arguments of COMMAND.
             This is useful for plugins like `run` or `mysql`, when you
@@ -511,7 +511,7 @@ class Shell(shnake.Shell):
             omega(127.0.0.1)> bind run
             [!] Type exit to leave binded 'run' subshell.
             # now shell is bound to `run`, so we just need to execute `type ls`
-            omega(127.0.0.1) #run > type ls
+            omega(127.0.0.1) #run> type ls
             ls is /bin/ls
         """
         if len(argv) != 2 or argv[1] not in self.complete_bind("", ""):

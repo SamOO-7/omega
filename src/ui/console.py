@@ -32,7 +32,7 @@ from decorators.isolate_readline_context import isolate_readline_context
 
 
 class Console:
-    """Create a python console to be run at omega runtime
+    """Create a python console to be run at Omega runtime
 
     In order of preference, it tries to run 'bpython' then 'IPython'.
     If none of these interpreters can be found, it defaults to

@@ -26,7 +26,7 @@ os.system("printf '\033]2;Omega Framework\a'")
 VERSION = "3.0"
 
 try:
-    import src  # spread omega sources
+    import src  # spread Omega sources
 
     import random
     import argparse
@@ -67,7 +67,7 @@ def rand_message() -> str:
 
 
 def cmdrun(iface, cmdobj, show_err=False) -> int:
-    """run a omega command
+    """run an Omega command
     handle syntax errors & return command's retcode
     """
     try:
@@ -79,9 +79,9 @@ def cmdrun(iface, cmdobj, show_err=False) -> int:
 
 # pylint: disable=too-many-branches
 def main() -> int:
-    """omega's main function
+    """Omega main function
     """
-    # Make omega usable as shebang for scripting
+    # Make Omega usable as shebang for scripting
 
     # Enable stdout wrapper
     sys.stdout = ui.output.Wrapper(backlog=True)
@@ -91,7 +91,7 @@ def main() -> int:
     if ui.input.isatty():
         interactive = True
 
-    # make this variable accessible from omega core
+    # make this variable accessible from Omega core
     ui.interface.interactive = interactive
 
     # Start shell interface

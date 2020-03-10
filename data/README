@@ -35,5 +35,5 @@
 
 ./tunnel/
 =========
-    This directory contains php codes used by the omega core
+    This directory contains php codes used by the Omega core
     for the payload builder.

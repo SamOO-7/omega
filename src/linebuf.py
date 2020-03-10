@@ -18,7 +18,7 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Provide advanced line-buffers for omega session settings"""
+"""Provide advanced line-buffers for Omega session settings"""
 
 import os
 import hashlib
@@ -97,7 +97,7 @@ class AbstractLineBuffer(ABC):
         is defined.
 
     *usable-value:
-        The final value used by omega. It depends on child classes.
+        The final value used by Omega. It depends on child classes.
         MultilineBuffer() uses the whole buffer as usable value.
         RandLineBuffer() uses a random line from buffer as usable value.
     """

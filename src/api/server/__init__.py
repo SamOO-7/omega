@@ -21,7 +21,7 @@
 """Omega operations on target server.
 
 This module includes a collection of submodules
-designed for omega server-side operations.
+designed for Omega server-side operations.
 
 CONTENTS:
 
@@ -29,7 +29,7 @@ CONTENTS:
     Common operation on target server pathnames.
 
 * payload (type: submodule)
-    The omega payload request manager.
+    The Omega payload request manager.
 """
 
 

@@ -47,7 +47,7 @@ WARNING:
     interpreted as a single argument.
 
     * Bad command:
-    # Here, omega parser detects multiple commands:
+    # Here, Omega parser detects multiple commands:
     > suidroot echo 'foo bar' > /tmp/foobar; cat /etc/passwd
 
     * Good command:
@@ -57,7 +57,7 @@ WARNING:
 EXAMPLES:
     > suidroot --create /tmp/backdoor
       - Generates the payload to be run as root in order
-        to enable persistance through omega
+        to enable persistance through Omega
     > suidroot cat /tmp/shadow
       - Print the /etc/shadow data as root
     > suidroot "whoami; id"

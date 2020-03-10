@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,10 +21,10 @@
 """Omega Session Manager
 
 When imorted for the first time, the "session" package initializes it
-self as a Omega blank session, with its default values.
+self as an Omega blank session, with its default values.
 
 
-Provide the Omega framework's session object from Session() class.
+Provide the Omega Framework's session object from Session() class.
 On import, an instance of it is defaultly created as `session`.
 
 A session instance contains the following objects:
@@ -61,7 +61,7 @@ class Session(metadict.MetaDict):
 
     # pylint: disable=invalid-name
     def __init__(self):
-        """Instanciate the omega session, it handles configuration
+        """Instanciate the Omega session, it handles configuration
         settings, environment variables, command aliases, http response
         cache and readline history (if readline is available).
         """
@@ -162,7 +162,7 @@ class Session(metadict.MetaDict):
             if "not a gzipped file" in str(error).lower():
                 data = compat_session.load(file)
                 if not data:
-                    raise ValueError("Not a omega session file")
+                    raise ValueError("Not an Omega session file!")
             else:
                 raise
         # get Session() obj from raw session value
@@ -220,7 +220,7 @@ class Session(metadict.MetaDict):
 
     def diff(self, file=None, display_diff=False):
         """This function returns True is the given `file` is
-        a omega session which differs from current session.
+        an Omega session which differs from current session.
         Otherwise, False is returned.
 
         Additionally, if `display_diff` is set, the session
@@ -362,5 +362,5 @@ class Session(metadict.MetaDict):
         pickle.dump(raw, gzip.open(file, 'wb'))
 
 
-# instanciate main omega session as core.session
+# instanciate main Omega session as core.session
 session = Session()

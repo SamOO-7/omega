@@ -36,7 +36,7 @@ def isolate_io_context(function):
     This decorator is useful if you run something
     that reconfigures the readline completer, or
     needs to use the default stdout file descriptor
-    instead of the omega's stdout wrapper.
+    instead of the Omega stdout wrapper.
     """
     def wrapper(*args, **kwargs):
         try:

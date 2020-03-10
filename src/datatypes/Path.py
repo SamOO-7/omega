@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -174,7 +174,7 @@ class Path(str):
         return new != old
 
     def browse(self):
-        """Display the file through omega's BROWSER
+        """Display the file through Omega browser.
 
         NOTE: For the moment, the method always returns True,
               but it may chance in the future.
@@ -271,7 +271,7 @@ class Path(str):
         NOTE:
         Multiline comment style (/* foo\nbar */) is not supported
         by internal php code minifier, and should generally not be
-        used inside of the omega framework.
+        used inside of the Omega Framework.
 
         """
         data = self.read().strip()

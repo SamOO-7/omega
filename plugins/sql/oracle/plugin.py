@@ -21,12 +21,12 @@
 r"""A client for Oracle PL/SQL databases.
 
 USAGE:
-    oracle connect <username> <password> "<CONNSTR>"
-    oracle connect <username> <password> "<CONNSTR>" <CHARSET>
-    oracle "<SQL COMMAND>"
+    oracle connect <username> <password> "<connstr>"
+    oracle connect <username> <password> "<connstr>" <charset>
+    oracle "<command>"
 
 DESCRIPTION:
-    Run Oracle PL/SQL commands through omega.
+    Run Oracle PL/SQL commands through Omega.
     - The 'connect' argument establishes a connection with
     given credentials, which are then stored on `ORACLE_CRED`
     environment variable in order to be persistent between

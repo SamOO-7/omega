@@ -126,7 +126,7 @@ class Plugin:
 
 
 class ExecPlugin:
-    """Execute a Omega Plugin
+    """Execute an Omega plugin
     """
     filename = "plugin"
     _instance_id = 0

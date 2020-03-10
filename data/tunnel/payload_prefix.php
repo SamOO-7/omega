@@ -1,7 +1,7 @@
 <?php
 
 //            ---------------------------------------------------
-//                              Omega Framework                                
+//                              Omega Framework
 //            ---------------------------------------------------
 //                  Copyright (C) <2020>  <Entynetproject>       
 //
@@ -19,10 +19,10 @@
 //        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // This php code sample is the default value for PAYLOAD_PREFIX
-// configuration setting in the omega framework.
+// configuration setting in the Omega Framework.
 //
 // For help about this setting, please run `help set PAYLOAD_PREFIX`
-// in the omega interface.
+// in the Omega interface.
 
 
 // Enable php error display.

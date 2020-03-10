@@ -24,7 +24,7 @@ from datatypes import Path
 
 
 class Payload(metadict.MetaDict):
-    # the omega env vars to auto add
+    # the Omega env vars to auto add
     # to $OMEGA array on php side
     _unherited_env_vars = ["PATH_SEP"]
 

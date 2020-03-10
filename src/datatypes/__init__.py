@@ -51,7 +51,7 @@ Omega dedicated datatypes obey the following conventions:
 
 * __str__()
     Returns a nice string representation of the object, it may include
-    ANSI colors, because the Omega framework's output manager
+    ANSI colors, because the Omega Framework's output manager
     automagically strips them if they cannot be displayed anyways.
     >>> print(Interval('1-10'))
     1 <= x <= 10 (random interval)

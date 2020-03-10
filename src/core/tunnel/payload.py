@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -174,7 +174,7 @@ class Build:
     tunnel handler to retrieve output returned from payload after
     remote http request execution.
 
-    The payload is also encapsulated through omega standard
+    The payload is also encapsulated through Omega standard
     encapsulator (./data/tunnel/encapsulator.php).
     """
     encapsulator = Path(core.BASEDIR, 'data/tunnel/encapsulator.php').phpcode()

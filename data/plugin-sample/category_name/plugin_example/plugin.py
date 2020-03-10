@@ -5,7 +5,7 @@ USAGE:
 
 DESCRIPTION:
     This plugin is a sample made to understand how
-    omega plugins are structured.
+    Omega plugins are structured.
 
     If the `api` module is imported outside a real plugin
     runtime (for example through `corectl python-console`),
@@ -26,7 +26,7 @@ DESCRIPTION:
 # standard library modules
 import sys
 
-# omega framework modules
+# Omega Framework modules
 import api
 
 

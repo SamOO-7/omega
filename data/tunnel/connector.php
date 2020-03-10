@@ -1,7 +1,7 @@
 <?
 
 //            ---------------------------------------------------
-//                              Omega Framework                                
+//                              Omega Framework
 //            ---------------------------------------------------
 //                  Copyright (C) <2020>  <Entynetproject>       
 //
@@ -51,7 +51,7 @@ function get_tmp_dir()
 // raw array of variables returned by the connector.
 // This array shall contain enough informations to
 // determine tunnel environment variables that
-// will be used by omega for the created tunnel.
+// will be used by Omega for the created tunnel.
 $R = $_SERVER;
 
 $R['PHP_OS'] = PHP_OS;

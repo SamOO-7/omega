@@ -21,13 +21,13 @@
 """
 Set the maximum length of a single HTTP Header.
 
-This setting is needed to tell omega to generate HTTP
+This setting is needed to tell Omega to generate HTTP
 requests that are acceptable for the target server.
 
 * EXAMPLE:
 Most http servers allow up to 4KB of data per HTTP Header.
 Therefore, if the server is configured to only allow up to
-500 bytes Headers, omega could fail to execute payloads
+500 bytes Headers, Omega could fail to execute payloads
 unless you change value of REQ_MAX_HEADER_SIZE to 500:
 > set REQ_MAX_HEADER_SIZE 500
 

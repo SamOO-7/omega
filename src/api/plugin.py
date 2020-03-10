@@ -41,7 +41,7 @@ class Plugin:
     * help (type: str)
         # Plugin docstring (detailed help).
         >>> print(plugin.help)
-        [*] foobar: An imaginary omega plugin
+        [*] foobar: An imaginary Omega plugin
         DESCRIPTION:
             An imaginary foobar plugin description.
         ...

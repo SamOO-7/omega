@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -24,7 +24,7 @@ USAGE:
     cd <remote_dir>
 
 DESCRIPTION:
-    Change current working directory of omega target.
+    Change current working directory of Omega target.
 
     - This plugin checks if the given path is remotely
     reachable, then changes $PWD environment variable if
@@ -77,5 +77,5 @@ response = payload.send()
 if response != "ok":
     sys.exit("Unexpected response: %r" % response)
 
-# change $PWD omega environment variable
+# change $PWD Omega environment variable
 environ['PWD'] = absolute_path

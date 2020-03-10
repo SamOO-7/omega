@@ -6,7 +6,7 @@
 # It means that you just have to put the commands as you type them in
 # the Omega shell interface in order to build your own configuration.
 #
-# NOTE: If any command fails, the omega framework will fail to
+# NOTE: If any command fails, the Omega Framework will fail to
 #       load this configuration file.
 
 
@@ -25,7 +25,7 @@ alias backdoor  "exploit --get-backdoor"
 
 ### Some configuration examples you may want to add:
 
-## Change the PASSKEY to prevent others omega users from using your backdoor
+## Change the PASSKEY to prevent others Omega users from using your backdoor
 # set PASSKEY "YourPassKey"
 
 ## For vim addicts: don't change your habits !

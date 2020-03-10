@@ -18,9 +18,9 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Common operation on omega target server pathnames.
+"""Common operation on Omega target server pathnames.
 
-These functions are designed for use in omega plugins,
+These functions are designed for use in Omega plugins,
 for normalizing and extracting server path components.
 
 This module is highly inspired by `os.path` from standard library.

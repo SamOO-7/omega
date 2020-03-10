@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,10 +21,10 @@
 r"""A client for Microsoft SQL Server.
 
 USAGE:
-    mssql connect <USERNAME>@<HOSTNAME> [-p <password>
+    mssql connect <username>@<hostname> -p <password>
     mssql show [databases|tables]
-    mssql use <DATABASE>
-    mssql "<SQL COMMAND>"
+    mssql use <database>
+    mssql "<command>"
 
 DESCRIPTION:
     This plugin handles "Microsoft SQL Server" interactions

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -22,7 +22,7 @@
 Control over which payload size the zlib compression feature
 will be disabled.
 
-The omega request engine does'its best to compress and fit
+The Omega request engine does'its best to compress and fit
 the payload within as little HTTP Requests as possible.
 
 Therefore, zlib compression becomes exponentially CPU greedy

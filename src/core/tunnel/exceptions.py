@@ -42,7 +42,7 @@ class RequestError(TunnelException):
     """Tunnel request sender exception
 
     This exception is raised by the tunnel handler if
-    something fails while sending omega requests.
+    something fails while sending Omega requests.
 
     Used by the tunnel.handler.Request.Send() method.
     """

@@ -21,13 +21,13 @@
 """
 Define how many HTTP Headers can be sent in a request.
 
-This setting is needed to tell omega to generate HTTP
+This setting is needed to tell Omega to generate HTTP
 requests that are acceptable for the target server.
 
 * EXAMPLE:
 Most http servers allow up to 100 Headers per HTTP request.
 Therefore, if the server is configured to only allow up
-to 20 headers, omega could fail to execute payloads
+to 20 headers, Omega could fail to execute payloads
 unless you change value of REQ_MAX_HEADERS to 20:
 > set REQ_MAX_HEADERS 20
 

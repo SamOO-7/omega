@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -19,20 +19,20 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-HTTP Header to use as main omega payload stager for RCE.
+HTTP Header to use as main Omega payload stager for RCE.
 
-PASSKEY is used by BACKDOOR setting, and omega's http
+PASSKEY is used by backdoor setting, and Omega http
 tunnel mechanisms as the main payload stager & dispatcher.
 
-While exploiting a remote TARGET with omega, make sure
-PASSKEY have the same value as the one it had when backdoor
+While exploiting a remote target with Omega, make sure
+passkey have the same value as the one it had when BACKDOOR
 had been generated.
 
 * AUTHENTICATION FEATURE:
 It is recommended that you permanently change PASSKEY value
 to a custom value for authentication purposes.
 Indeed, having a custom PASSKEY value ensures that other
-omega users will not be able to connect to your installed
+Omega users will not be able to connect to your installed
 backdoor without the knowledge of it's value.
 
 * EXAMPLE: Use a custom PASSKEY to prevent unauthorized access

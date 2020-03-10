@@ -21,13 +21,13 @@
 """
 Set max size of POST data allowed in an HTTP request.
 
-This setting is needed to tell omega to generate HTTP
+This setting is needed to tell Omega to generate HTTP
 requests that are acceptable for the target server.
 
 * EXAMPLE:
 Most http servers allow up to 4MiB per request message body.
 Therefore, if the server is configured to only allow up
-to 300KiB, omega could fail to execute payloads
+to 300KiB, Omega could fail to execute payloads
 unless you change value of REQ_MAX_HEADERS to 300 KiB:
 > set REQ_MAX_HEADERS 300KiB
 

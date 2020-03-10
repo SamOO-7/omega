@@ -21,7 +21,7 @@
 """
 Default HTTP method to use to communicate with TARGET.
 
-The omega framework supports both GET and POST methods
+The Omega Framework supports both GET and POST methods
 to send HTTP requests
 
 * GET METHOD:
@@ -37,7 +37,7 @@ to send HTTP requests
 # CONS:
     The amount of data that can be injected is limited by remote
     server's REQ_MAX_HEADERS and REQ_MAX_HEADER_SIZE.
-    So omega may need to run multi-request payloads more
+    So Omega may need to run multi-request payloads more
     frequently.
 
 * POST METHOD:

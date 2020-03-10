@@ -1,4 +1,4 @@
-# Omega framework's user configuration directory
+# Omega Framework's user configuration directory
 ----------------------------------------------------
 
 
@@ -19,7 +19,7 @@ configuration file:
 ===================
 
 This directory must be used for user specific plugins.
-It works exactly the same way as omega's plugins directory.
+It works exactly the same way as Omega plugins directory.
 
 * Structure convention:
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -19,7 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Default omega temporary directory.
+Default Omega temporary directory.
 
 * USE CASES:
 Used as base path for files edited with `edit` plugin.

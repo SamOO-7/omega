@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -18,7 +18,7 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Advanced dict-like classes for processing omega
+"""Advanced dict-like classes for processing Omega
 complex session objects.
 """
 __all__ = ["MetaDict", "VarContainer"]
@@ -31,7 +31,7 @@ class MetaDict(dict):
     """MetaDict() object
 
     An advanced dict() like class with advanced features,
-    for omega session objects.
+    for Omega session objects.
 
     Metadict() can be instanciated from a built-in dict().
     Otherwise, it instanciates itself as en empty directory.
@@ -150,7 +150,7 @@ class MetaDict(dict):
     def update(self, new_dict):
         """Override parent (dict.update()), because it seems that
         built-in method doesn't use self.__setitem__() internally,
-        which is problematic for omega
+        which is problematic for Omega
         """
         if isinstance(new_dict, dict):
             for key, value in new_dict.items():

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -19,7 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Set attacker's default Web Browser in omega's context.
+Set attacker's default Web Browser in Omega context.
 
 * USE CASES:
 The '--browser' option of `phpinfo` plugin uses this setting

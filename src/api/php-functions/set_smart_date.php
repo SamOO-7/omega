@@ -20,7 +20,7 @@
 
 // set_smart_date($smart_date) (type => string):
 //      Return an unix timestamp from a value returned by
-//      omega's python get_smart_date() function.
+//      Omega python get_smart_date() function.
 //
 //      >>> # if a date string is given, return timestamp
 //      >>> set_smart_date("2011-09-11 13:29:42")

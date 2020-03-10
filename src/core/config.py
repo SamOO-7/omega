@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -20,7 +20,7 @@
 
 """User configuration manager.
 
-Browse, initialize and load Omega framework user
+Browse, initialize and load Omega Framework user
 configuration directory and elements.
 """
 import os
@@ -38,7 +38,7 @@ class UserDir: # pylint: disable=too-few-public-methods
     choices = ["~/.config/omega", "~/.omega"]
 
     def __init__(self):
-        """Get omega configuration directory,
+        """Get Omega configuration directory,
         by checking, in this order of preference:
           - $OMEGA_CONFIG_DIR/ (only if env var exists)
           - $XDG_CONFIG_HOME/omega/ (only if env var exists)

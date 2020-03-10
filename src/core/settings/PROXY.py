@@ -21,7 +21,7 @@
 """
 Use a proxy to connect to the target
 
-You can set a proxy in order to encapsulate the whole omega
+You can set a proxy in order to encapsulate the whole Omega
 requests for furtivity or network analysis purposes.
 
 This setting supports HTTP, HTTPS, SOCKS4

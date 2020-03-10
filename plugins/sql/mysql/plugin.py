@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,13 +21,13 @@
 r"""A client for MySQL databases.
 
 USAGE:
-    mysql connect <USERNAME>@<HOSTNAME> [-p <password>
+    mysql connect <username>@<hostname> -p <password>
     mysql show [databases|tables]
-    mysql use <DATABASE>
-    mysql "<SQL COMMAND>"
+    mysql use <database>
+    mysql "<command>"
 
 DESCRIPTION:
-    Run MySQL commands through omega.
+    Run MySQL commands through Omega.
     - The 'connect' argument establishes a connection with
     given credentials, which are then stored on `MYSQL_CRED`
     environment variable in order to be persistent between

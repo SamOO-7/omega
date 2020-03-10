@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -24,7 +24,8 @@ USAGE:
     upload <local_file> <remote_dir>
 
 OPTIONS:
-    -f  Overwrite destination without confirmation if it
+    -f
+        Overwrite destination without confirmation if it
         already exists.
 
 DESCRIPTION:
@@ -43,7 +44,7 @@ LIMITATIONS:
     Recursive directory and multiple file uploads are not available.
 
 EXAMPLES:
-    > upload /data/backdoors/r75.php /var/www/images/
+    > upload /data/backdoors/r75.php /var/www/images
       - Upload your local r57.php file to the remote images dir
     > upload -f /tmp/logo-gimped.png /srv/www/img/logo.png
       - Overwrite the remote logo with your own without confirm

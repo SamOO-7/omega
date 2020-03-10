@@ -50,7 +50,7 @@ def get_smart_date(value):
     '2011-09-11 13:29:42'
 
     NOTE:
-    On omega's php side, the set_smart_date()
+    On Omega php side, the set_smart_date()
     function can be used to generate a timestamp.
 
     """

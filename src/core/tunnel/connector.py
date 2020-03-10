@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -47,7 +47,7 @@ class Request:
         # send the `connector.php` payload through created tunnel (socket).
         payload = Path(core.BASEDIR, 'data/tunnel/connector.php').phpcode()
         socket.open(payload)
-        # build omega session's environment variables from
+        # build Omega session's environment variables from
         # connector.php's returned array.
         self.socket = socket
         raw_vars = self._get_vars(socket.read())

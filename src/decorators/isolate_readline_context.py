@@ -28,7 +28,7 @@ def isolate_readline_context(function):
     This decorator isolates readline context of target
     function or method.
 
-    Use when omega's readline context should be
+    Use when Omega readline context should be
     reset temporarly is the context of triggering
     function or method.
 

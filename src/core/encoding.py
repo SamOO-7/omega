@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,7 +21,7 @@
 """Generic encoding handler.
 
 This small string encoding/decoding manager aims to provide
-an uniform encoding handling policy for the omega framework.
+an uniform encoding handling policy for the Omega Framework.
 """
 
 import sys

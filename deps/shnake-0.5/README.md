@@ -9,7 +9,7 @@ Introduction
 Shnake is a generic command interpreter with multicommand support.
 
 The shnake library has been initially developped to correctly handle
-the [omega framework] shell interfaces. Therefore, it was built
+the [Omega Framework] shell interfaces. Therefore, it was built
 in order to stand generic, and usable by any other open-source project.
 
 - The shell part extends the pretty good `cmd` standard library, adding many
@@ -102,5 +102,5 @@ Features
   * Unlike [cmd], shnake is NOT compatible with python 2.x.
 
 
-[omega framework]: https://github.com/entynetproject/omega
+[Omega Framework]: https://github.com/entynetproject/omega
 [cmd]: https://docs.python.org/3.4/library/cmd.html

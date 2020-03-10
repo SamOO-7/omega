@@ -21,10 +21,10 @@
 """Execute a command on remote server.
 
 USAGE:
-    exec "<SHELL-COMMAND>"
+    exec "<command>"
 
 DESCRIPTION:
-    Most omega plugins intend to simulate shell commands
+    Most Omega plugins intend to simulate shell commands
     to still be able to 'work' when command execution is blocked
     to PHP security restrictions.
 
@@ -43,13 +43,13 @@ UNIX/Linux Additional Features:
     PWD environment variable is updated according to remote $PWD.
 
 WARNING:
-    Considering omega's input parser, commands which
+    Considering Omega input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework MUST be quoted to be
     interpreted as a single argument.
 
     * Bad command:
-    # Here, omega parser detects multiple commands:
+    # Here, Omega parser detects multiple commands:
     > exec echo 'foo bar' > /tmp/foobar; cat /etc/passwd
 
     * Good command:

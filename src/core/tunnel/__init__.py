@@ -121,5 +121,5 @@ class Tunnel:
         return handler.get_raw_requests()
 
 
-# instanciate main omega tunnel as core.tunnel
+# instanciate main Omega tunnel as core.tunnel
 tunnel = Tunnel()

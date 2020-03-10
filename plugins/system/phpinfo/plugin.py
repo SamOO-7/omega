@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,11 +21,11 @@
 """Show information about PHP configuration.
 
 USAGE:
-    phpinfo [--browser]
+    phpinfo
 
 OPTIONS:
     --browser
-        Display raw phpinfo()'s HTML output in web browser
+        Display raw phpinfo()'s HTML output in web browser.
 
 DESCRIPTION:
     Display the remote server's phpinfo() data in tabular

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -56,7 +56,7 @@ from ..color import colorize, decolorize
 
 
 class Stdout:
-    """Omega framework's dedicated standard output wrapper,
+    """Omega Framework's dedicated standard output wrapper,
     supplying some enhancements, such as pattern coloration and
     back logging.
 

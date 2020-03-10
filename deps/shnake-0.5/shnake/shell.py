@@ -1,7 +1,7 @@
 r"""A generic command interpreter with multicommand support.
 
 The cmdshell library has been initially developped to correctly handle
-Omega framework's shell interfaces. That being said, it was built
+Omega Framework's shell interfaces. That being said, it was built
 in order to stand generic, and usable by any other open-source project.
 
 It extends the pretty good 'cmd' library, adding many new features, and

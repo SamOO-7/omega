@@ -14,9 +14,9 @@ DESCRIPTION:
     lifting is handled by pyparsing (http://pyparsing.sf.net).
 
 OPTIONS:
-    -h,--help        this message
-    -v,--version     version
-    -d,--debug       turn on debug messages
+    -h,--help        Show this message.
+    -v,--version     Show version.
+    -d,--debug       Turn on debug messages.
 
 EXAMPLES:
     1. As standalone

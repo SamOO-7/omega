@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -548,7 +548,7 @@ class Request:
 
     @staticmethod
     def get_php_errors(data):
-        """function designed to parse php errors from omega response
+        """function designed to parse php errors from Omega response
         for better output and plugin debugging purposes.
         Its is called by the Read() function and returns the $error string
 
@@ -737,7 +737,7 @@ class Request:
         """Main request Sender:
 
         if takes the concerned request object as argument
-        and returns the unparsed and decapsulated omega response
+        and returns the unparsed and decapsulated Omega response
 
         """
         # flush raw requests container
@@ -813,7 +813,7 @@ class Request:
         and writes the __ERROR__'s php error method to self.response_error.
 
         Note: The php __ERROR__ container is not a real error, but a
-              omega built method to allow plugins returning plugin
+              Omega built method to allow plugins returning plugin
               error strings that can be differenciated from base result.
 
         """

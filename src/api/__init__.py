@@ -29,7 +29,7 @@ CONTENTS:
     Access running plugin attributes
 
 * environ (type: dict)
-    Access omega session's Environment Variables
+    Access Omega session's Environment Variables
 
 * server (type: package)
     Provides target server related operations.

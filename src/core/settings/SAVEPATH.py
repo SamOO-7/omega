@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -19,7 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Default directory to save and load omega session files.
+Default directory to save and load Omega session files.
 
 * EXAMPLE:
 If SAVEPATH is '/dev/shm', running `session load foo.session`

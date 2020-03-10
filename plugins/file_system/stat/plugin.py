@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -24,7 +24,8 @@ USAGE:
     stat <remote_file>
 
 OPTIONS:
-    -L  Follow symbolic links.
+    -L
+        Follow symbolic links.
 
 DESCRIPTION:
     Get remote file status informations.

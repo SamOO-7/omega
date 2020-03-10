@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -19,15 +19,15 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """
-Set the maximum omega session file size.
+Set the maximum Omega session file size.
 
-While using the omega framework, some usage informations
+While using the Omega Framework, some usage informations
 are stored, such as commands history.
 Changing this limit ensures that the session, if saved whith
 `session save` command will not exceed a certain size.
 
 * USE CASES:
-omega's history uses this value to determine the maximum
+Omega history uses this value to determine the maximum
 number of command lines to store in session file.
 """
 import linebuf

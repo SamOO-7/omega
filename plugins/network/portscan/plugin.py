@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 #            ---------------------------------------------------
-#                              Omega Framework                                
+#                              Omega Framework
 #            ---------------------------------------------------
 #                  Copyright (C) <2020>  <Entynetproject>       
 #
@@ -21,15 +21,15 @@
 """TCP port scanner.
 
 USAGE:
-    portscan <host> [-p <PORT> [-t <TIMEOUT>
+    portscan <host>
 
 OPTIONS:
-    -p <PORT>
-        single or range of port(s) to scan
-        (defaults to 20-10000)
-    -t <TIMEOUT>
-        socket timeout (in seconds)
-        (defaults to 0.2)
+    -p <port>
+        Single or range of port(s) to scan
+        (defaults to 20-10000).
+    -t <timeout>
+        Socket timeout (in seconds)
+        (defaults to 0.2).
 
 DESCRIPTION:
     Scan a single port or range of ports on HOST
