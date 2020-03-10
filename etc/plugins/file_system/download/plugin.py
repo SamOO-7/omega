@@ -57,6 +57,8 @@ from api import server
 if not 2 <= len(plugin.argv) <= 4:
     sys.exit(plugin.help)
 
+w = os.environ['OLDPWD']
+os.chdir(w)
 
 if plugin.argv[1] == "-f":
     force = True
@@ -86,11 +88,15 @@ if not os.path.isdir(local_dirname):
     if os.path.isdir(local_dirname):
         local_basename = os.path.basename(local_abspath)
     else:
+        g = os.environ['HOME']
+        os.chdir(g + "/omega")
         sys.exit("%s: Invalid local directory!" % local_dirname)
 
 try:
     Path(local_dirname, mode='w')
 except ValueError:
+    g = os.environ['HOME']
+    os.chdir(g + "/omega")
     sys.exit("%s: Local directory not writable!" % local_dirname)
 
 local_abspath = os.path.join(local_dirname, local_basename)
@@ -99,8 +105,12 @@ if not force and os.path.exists(local_abspath):
     if os.path.isfile(local_abspath):
         question = "Local destination %s already exists, overwrite it?"
         if ui.input.Expect(False)(question % local_abspath):
+            g = os.environ['HOME']
+            os.chdir(g + "/omega")
             sys.exit("File transfer aborted.")
     else:
+        g = os.environ['HOME']
+        os.chdir(g + "/omega")
         sys.exit("Local destination %s is already exists!" % local_abspath)
 
 payload = server.payload.Payload("payload.php")
@@ -112,6 +122,10 @@ file = Path(local_abspath)
 try:
     file.write(base64.b64decode(response), bin_mode=True)
 except ValueError as err:
+    g = os.environ['HOME']
+    os.chdir(g + "/omega")
     sys.exit("Couldn't download file to %s: %s" % (local_abspath, err))
 
 print("[+] File successfully downloaded!")
+g = os.environ['HOME']
+os.chdir(g + "/omega")
