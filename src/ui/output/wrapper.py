@@ -176,12 +176,12 @@ class Stdout:
         >>> process_tags("[*] FOO: «bar»\\n")
         '\\x1b[1m\\x1b[34m[*]\\x1b[0m FOO: \\x1b[37m«bar»\\x1b[0m\\n'
         """
-        tag_list = [('\033[1;34m', '[*] '),   # INFO
-                    ('\033[1;31m', '[-] '),    # ERROR
-                    ('\033[1;32m', '[+] '),  # SUCCESS
-                    ('\033[1;77m', '[?] '),   # QUESTION
-                    ('\033[1;33m', '[!] '), # WARNING
-                    ('\033[1;77m', '[v] ')]  # DEBUG
+        tag_list = [('\033[1;34m', '[*] ', '\033[0m'),   # INFO
+                    ('\033[1;31m', '[-] ', '\033[0m'),    # ERROR
+                    ('\033[1;32m', '[+] ', '\033[0m'),  # SUCCESS
+                    ('\033[1;77m', '[?] ', '\033[0m'),   # QUESTION
+                    ('\033[1;33m', '[!] ', '\033[0m'), # WARNING
+                    ('\033[1;77m', '[v] ', '\033[0m')]  # DEBUG
 
         # if not tagged, return the line as it is
         tag = None # make pylint happy
