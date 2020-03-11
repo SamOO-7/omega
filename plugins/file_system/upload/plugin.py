@@ -44,7 +44,7 @@ LIMITATIONS:
     Recursive directory and multiple file uploads are not available.
 
 EXAMPLES:
-    > upload /data/backdoors/r75.php /var/www/images
+    > upload /data/payloads/r75.php /var/www/images
       - Upload your local r57.php file to the remote images dir
     > upload -f /tmp/logo-gimped.png /srv/www/img/logo.png
       - Overwrite the remote logo with your own without confirm

@@ -98,7 +98,7 @@ class Shell(shnake.Shell):
     def onecmd(self, argv):
         if "id" in session.Compat and session.Compat["id"] == "v1":
             print("[!] Warning: You are using a v1-compatible session file")
-            print("[!]          please upgrade $TARGET with new $BACKDOOR")
+            print("[!]          please upgrade $TARGET with new $PAYLOAD")
             print("[!]          and run `session upgrade` when done.")
             print("")
         print("[v] %s: Running..." % self.debug_cmdrepr(argv))
@@ -220,7 +220,7 @@ class Shell(shnake.Shell):
         argv = line.split()
         if (len(argv) == 2 and line[-1] == " ") or len(argv) > 2:
             return []
-        keys = ["--get-backdoor"]
+        keys = ["--get-payload"]
         return [x for x in keys if x.startswith(text)]
 
     def do_run(self, argv):
@@ -232,25 +232,25 @@ class Shell(shnake.Shell):
         DESCRIPTION:
             Connect to remote target URL (`help set TARGET`).
 
-            If backdoor (`run --get-backdoor`) is correctly
+            If payload (`run --get-payload`) is correctly
             injected in target URL, Omega spawns a remote shell.
 
         OPTIONS:
-            --get-backdoor
-                Display current backdoor code, as it should be
+            --get-payload
+                Display current payload code, as it should be
                 injected on target URL.
         """
-        obj = str(session.Conf.BACKDOOR(call=False))
+        obj = str(session.Conf.PAYLOAD(call=False))
         obj = obj.replace("%%PASSKEY%%", session.Conf.PASSKEY().upper())
 
         if len(argv) > 1:
-            if argv[1] == "--get-backdoor":
+            if argv[1] == "--get-payload":
                 print(obj)
                 return True
             self.interpret("help run")
             return False
 
-        print("[*] Current backdoor is: " + obj + "\n")
+        print("[*] Current payload is: " + obj + "\n")
 
         if tunnel:
             m = ("[*] Use `set TARGET <value>` to use another url as target."
@@ -259,9 +259,9 @@ class Shell(shnake.Shell):
             return False
 
         if session.Conf.TARGET() is None:
-            m = ("To run a remote tunnel, the backdoor shown above must be\n"
+            m = ("To run a remote tunnel, the payload shown above must be\n"
                  "manually injected in a remote server executable web page.\n"
-                 "Then, use `set TARGET <backdoored_url>` and run `run`.")
+                 "Then, use `set TARGET <payloaded_url>` and run `run`.")
             print(colorize("%BoldCyan", m))
             return False
 
@@ -557,8 +557,8 @@ class Shell(shnake.Shell):
               - Get detailed help on `help` command
             > help exit
               - Display the help for the `exit` command
-            > help set BACKDOOR
-              - Display help about the "BACKDOOR" setting
+            > help set PAYLOAD
+              - Display help about the "PAYLOAD" setting
         """
         def get_doc(cmd):
             """get lines from `cmd` docstring"""

@@ -18,7 +18,7 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Handle communication between python client and PHP backdoor"""
+"""Handle communication between python client and PHP payload"""
 __all__ = ["py2php", "php2py", "Build", "Encode"]
 
 import codecs

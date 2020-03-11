@@ -43,7 +43,7 @@ class Request:
         socket = handler.new_request()
         socket.is_first_payload = True
         socket.errmsg_request = "Could not connect to TARGET"
-        socket.errmsg_response = "TARGET does not seem to be backdoored"
+        socket.errmsg_response = "TARGET does not seem to be payloaded"
         # send the `connector.php` payload through created tunnel (socket).
         payload = Path(core.BASEDIR, 'data/tunnel/connector.php').phpcode()
         socket.open(payload)

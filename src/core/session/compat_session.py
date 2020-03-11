@@ -118,15 +118,15 @@ class Loader_V1_x(AbstractSessionLoader):
         #     result["PASSKEY"] = value.replace("%%HASHKEY%%",
         #                                       old_session["ENV_HASH"])
 
-        # $BACKDOOR
-        remove_key(result, "BACKDOOR")
-        # if "%%POSTVAR%%" in result["BACKDOOR"]:
-        #     value = result["BACKDOOR"]
+        # $PAYLOAD
+        remove_key(result, "PAYLOAD")
+        # if "%%POSTVAR%%" in result["PAYLOAD"]:
+        #     value = result["PAYLOAD"]
         #     if "'%%POSTVAR%%'" in value or '"%%POSTVAR%%"' in value:
         #         value = value.replace("%%POSTVAR%%", "%%PASSKEY%%")
         #     else:
         #         value = value.replace("%%POSTVAR%%", "'%%PASSKEY%%'")
-        #     result["BACKDOOR"] = value
+        #     result["PAYLOAD"] = value
 
         # $TARGET
         if "OPENER" in old_session.keys():

