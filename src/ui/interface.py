@@ -650,7 +650,7 @@ class Shell(shnake.Shell):
                 items = [p.name for p in items]
                 # rescale max_len in case of longer plugin names
                 max_len = max(max_len, len(max(items, key=len)))
-                full_help += [(category + " Plugins", items)]
+                full_help += [(category + " Commands", items)]
         # adapt max_len if there are command aliases
         aliases = list(session.Alias.keys())
         if aliases:
