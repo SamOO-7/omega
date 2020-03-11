@@ -24,23 +24,23 @@ __all__ = ["colorize", "decolorize", "diff"]
 import re
 import difflib
 
-ANSI = {"reset":  "\x1b[0m",    # reset everything
-        "bold":   "\x1b[1m",    # bold/bright style
-        "dim":    "\x1b[2;3m",  # dim or italic style
-        "lined":  "\x1b[4m",    # underline
-        "blink":  "\x1b[5m",    # blinking style
-        "invert": "\x1b[7m",    # invert foreground/backgroung
-        "basic":  "\x1b[22m",   # set normal style
+ANSI = {"reset":  "\033[0m",    # reset everything
+        "bold":   "\033[1m",    # bold/bright style
+        "dim":    "\033[2;3m",  # dim or italic style
+        "lined":  "\033[4m",    # underline
+        "blink":  "\033[5m",    # blinking style
+        "invert": "\033[7m",    # invert foreground/backgroung
+        "basic":  "\033[22m",   # set normal style
         # COLOR CODES
-        "black":  "\x1b[30m",   # black color
-        "red":    "\x1b[31m",   # red color
-        "green":  "\x1b[32m",   # green color
-        "yellow": "\x1b[33m",   # yellow color
-        "blue":   "\x1b[34m",   # blue color
-        "pink":   "\x1b[35m",   # pink/magenta
-        "cyan":   "\x1b[36m",   # cyan color
-        "white":  "\x1b[37m",   # white color
-        "normal": "\x1b[39m"}   # default color
+        "black":  "\033[30m",   # black color
+        "red":    "\033[31m",   # red color
+        "green":  "\033[32m",   # green color
+        "yellow": "\033[33m",   # yellow color
+        "blue":   "\033[34m",   # blue color
+        "pink":   "\033[35m",   # pink/magenta
+        "cyan":   "\033[36m",   # cyan color
+        "white":  "\033[77m",   # white color
+        "normal": "\033[0m"}    # default color
 
 
 def colorize(*args):
