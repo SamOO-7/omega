@@ -129,7 +129,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load MYSQL_CRED environment variable
 if "MYSQL_CRED" not in environ:
-    sys.exit("Not connected to any server, use `mysql connect` before")
+    sys.exit("Not connected to any server.")
 creds = load_credentials(environ["MYSQL_CRED"])
 
 # format last mysql token correctly
