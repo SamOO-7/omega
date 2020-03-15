@@ -41,7 +41,7 @@ DESCRIPTION:
     display mode.
 
 WARNING:
-    Considering the Omega's input parser, commands which
+    Considering the Omega input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework SHALL be enquoted to be
     interpreted as a single argument. For example:
@@ -130,7 +130,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load MSSQL_CRED environment variable
 if "MSSQL_CRED" not in environ:
-    sys.exit("[!] Not connected to any server.")
+    sys.exit("Not connected to any server.")
 creds = load_credentials(environ["MSSQL_CRED"])
 
 # format last mssql token correctly
