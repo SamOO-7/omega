@@ -64,9 +64,9 @@ EXAMPLES:
 
 ENVIRONMENT:
     * MSSQL_CRED
-        mssql connection credentials
+        MsSQL connection credentials
     * MSSQL_BASE
-        mssql default database to use
+        MsSQL default database to use
 """
 
 import sys
