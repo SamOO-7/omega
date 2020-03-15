@@ -89,7 +89,7 @@ if len(errors) > max(20, len(result) / 2):
     print("Not shown: %d (%s)\n" % (main_err_count, main_err[1]))
 
 # display each port with information
-print("PORT   INFORMATION")
+print("Port   Information")
 print("----   -----------")
 for elem in result:
     port_num = str(elem[0])
