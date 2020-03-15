@@ -40,7 +40,7 @@ DESCRIPTION:
     display mode.
 
 WARNING:
-    Considering the Omega's input parser, commands which
+    Considering the Omega input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework SHALL be enquoted to be
     interpreted as a single argument. For example:
@@ -63,9 +63,9 @@ EXAMPLES:
 
 ENVIRONMENT:
     * MYSQL_CRED
-        MySQL's connection credentials
+        MySQL connection credentials
     * MYSQL_BASE
-        MySQL's default database to use
+        MySQL default database to use
 """
 
 import sys
