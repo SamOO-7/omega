@@ -105,7 +105,7 @@ if plugin.argv[1].lower() == "connect":
     if len(plugin.argv) < 3:
         sys.exit(plugin.help)
     if plugin.argv[2].count('@') != 1:
-        sys.exit("[-] Invalid connection credentials.")
+        sys.exit("[-] Invalid connection credentials!")
     raw_creds = plugin.argv[2]
     if len(plugin.argv) > 3:
         if plugin.argv[3] == "-p":
