@@ -41,7 +41,7 @@ LIMITATIONS:
     rights on payload file.
 
 WARNING:
-    Considering Omega's input parser, commands which
+    Considering Omega input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework MUST be quoted to be
     interpreted as a single argument.

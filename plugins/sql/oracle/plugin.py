@@ -38,7 +38,7 @@ DESCRIPTION:
     display mode.
 
 WARNING:
-    Considering the Omega's input parser, commands which
+    Considering the Omega input parser, commands which
     contain quotes, semicolons, and other chars that could be
     interpreted by the framework SHALL be enquoted to be
     interpreted as a single argument. For example:
@@ -141,7 +141,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load ORACLE_CRED environment variable
 if "ORACLE_CRED" not in environ:
-    sys.exit("Not connected to any server, use `oracle connect` before")
+    sys.exit("Not connected to any server.")
 creds = load_credentials(environ["ORACLE_CRED"])
 
 # format last oracle token correctly
