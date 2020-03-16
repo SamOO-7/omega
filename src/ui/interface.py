@@ -663,7 +663,7 @@ class Shell(shnake.Shell):
         cmd_col = ' ' * (max_len - 5)
         for grp_name, grp_cmdlist in full_help:
             if grp_name == '\nCore Commands':
-                underline = '=='
+                underline = '============='
             else:
                 underline = '=' * len(grp_name)
             if grp_name == "Command Aliases":
