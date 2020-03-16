@@ -641,7 +641,7 @@ class Shell(shnake.Shell):
 
         # help
         core_commands = self.get_names(self, "do_")
-        full_help = [('Core Commands', core_commands)]
+        full_help = [('\nCore Commands', core_commands)]
         max_len = max(13, len(max(core_commands, key=len)))
         # add plugins if connected to target
         if tunnel:
