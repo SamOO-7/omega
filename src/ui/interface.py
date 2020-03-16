@@ -662,7 +662,10 @@ class Shell(shnake.Shell):
         # print full_help, group by group
         cmd_col = ' ' * (max_len - 5)
         for grp_name, grp_cmdlist in full_help:
-            underline = '=' * len(grp_name)
+            if grp_name == 'Core Commands':
+                underline = '=='
+            else:
+                underline = '=' * len(grp_name)
             if grp_name == "Command Aliases":
                 print(grp_name + "\n" + underline + "\n" + "\n"
                       "    Alias  " + cmd_col + "Value\n"
