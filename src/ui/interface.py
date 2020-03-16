@@ -662,7 +662,7 @@ class Shell(shnake.Shell):
         # print full_help, group by group
         cmd_col = ' ' * (max_len - 5)
         for grp_name, grp_cmdlist in full_help:
-            if grp_name == 'Core Commands':
+            if grp_name == '\nCore Commands':
                 underline = '=='
             else:
                 underline = '=' * len(grp_name)
