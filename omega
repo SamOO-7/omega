@@ -25,23 +25,17 @@ os.system("printf '\033]2;Omega Framework\a'")
 
 VERSION = "3.0"
 
-try:
-    import src  # spread Omega sources
+import src  # spread Omega sources
+import random
+import argparse
+import subprocess as sp
 
-    import random
-    import argparse
-    import subprocess as sp
-
-    import core
-    import ui.input
-    import ui.output
-    import ui.interface
-    from ui.color import colorize
-    from datatypes import Path
-except KeyboardInterrupt:
-    sys.exit("\r[-] Omega initialization interrupted!")
-
-
+import core
+import ui.input
+import ui.output
+import ui.interface
+from ui.color import colorize
+from datatypes import Path
 
 def parser_help_formatter(prog):
     """argparser help output formatter"""

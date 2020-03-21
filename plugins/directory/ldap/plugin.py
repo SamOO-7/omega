@@ -101,7 +101,7 @@ if plugin.argv[1].lower() == "connect":
     sys.exit(0)
 # check and load MYSQL_CRED environment variable
 if "LDAP" not in environ:
-    sys.exit("Not connected to any server.")
+    sys.exit("Not connected to any server")
 
 # List node
 if plugin.argv[1].lower() == "list":

@@ -124,7 +124,7 @@ for iteration in [1, 2]:
         if ui.input.Expect(False)(question % uploaded_file):
             g = os.environ['HOME']
             os.chdir(g + "/omega")
-            sys.exit("File transfer aborted!")
+            sys.exit("File transfer aborted")
         else:
             continue
 

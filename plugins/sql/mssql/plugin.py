@@ -130,7 +130,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load MSSQL_CRED environment variable
 if "MSSQL_CRED" not in environ:
-    sys.exit("Not connected to any server.")
+    sys.exit("Not connected to any server")
 creds = load_credentials(environ["MSSQL_CRED"])
 
 # format last mssql token correctly
@@ -186,7 +186,7 @@ if query_type == "SET":
 
 # Query type: GET
 if affected_rows == 0:
-    sys.exit("Empty set.")
+    sys.exit("Empty set")
 
 fields = response[2][0]
 rows = response[2][1:]

@@ -141,7 +141,7 @@ if plugin.argv[1].lower() == "connect":
 
 # check and load ORACLE_CRED environment variable
 if "ORACLE_CRED" not in environ:
-    sys.exit("Not connected to any server.")
+    sys.exit("Not connected to any server")
 creds = load_credentials(environ["ORACLE_CRED"])
 
 # format last oracle token correctly

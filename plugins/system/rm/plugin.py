@@ -60,7 +60,7 @@ dirname = server.path.dirname(abs_path)
 basename = server.path.basename(abs_path)
 
 if recurse:
-    sys.exit("Recursive mode is not yet available.")
+    sys.exit("Recursive mode is not yet available")
 
 payload = server.payload.Payload("single.php")
 payload["FILE"] = abs_path

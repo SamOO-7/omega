@@ -112,15 +112,15 @@ class Plugin:
                         print(line)
                     print()
                 else:
-                    print("[!] %s: %s" % (self.name, retval))
+                    print("[!] %s: %s." % (self.name, retval))
                 retval = 1
             return retval
         except server.payload.PayloadError as err:
-            print("[!] %s: %s" % (self.name, err))
+            print("[!] %s: %s." % (self.name, err))
             return 64
         except BaseException as err:
             msg = "Python runtime error (exception occured)"
-            print("[!] %s: %s:" % (self.name, msg))
+            print("[!] %s: %s.:" % (self.name, msg))
             raise err
         return 0
 

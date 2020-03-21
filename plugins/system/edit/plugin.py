@@ -73,9 +73,9 @@ else:
 modified = file.edit()
 if not modified:
     if reader_response == "NEW_FILE":
-        sys.exit("File creation aborted!")
+        sys.exit("File creation aborted")
     else:
-        sys.exit("The file was not modified!")
+        sys.exit("The file was not modified")
 
 writer = server.payload.Payload("writer.php")
 writer['FILE'] = absolute_path

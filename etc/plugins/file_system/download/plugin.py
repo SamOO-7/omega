@@ -90,14 +90,14 @@ if not os.path.isdir(local_dirname):
     else:
         g = os.environ['HOME']
         os.chdir(g + "/omega")
-        sys.exit("%s: Invalid local directory!" % local_dirname)
+        sys.exit("%s: Invalid local directory" % local_dirname)
 
 try:
     Path(local_dirname, mode='w')
 except ValueError:
     g = os.environ['HOME']
     os.chdir(g + "/omega")
-    sys.exit("%s: Local directory not writable!" % local_dirname)
+    sys.exit("%s: Local directory not writable" % local_dirname)
 
 local_abspath = os.path.join(local_dirname, local_basename)
 
@@ -107,11 +107,11 @@ if not force and os.path.exists(local_abspath):
         if ui.input.Expect(False)(question % local_abspath):
             g = os.environ['HOME']
             os.chdir(g + "/omega")
-            sys.exit("File transfer aborted.")
+            sys.exit("File transfer aborted")
     else:
         g = os.environ['HOME']
         os.chdir(g + "/omega")
-        sys.exit("Local destination %s is already exists!" % local_abspath)
+        sys.exit("Local destination %s is already exists" % local_abspath)
 
 payload = server.payload.Payload("payload.php")
 payload['FILE'] = abspath
