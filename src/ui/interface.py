@@ -504,14 +504,14 @@ class Shell(shnake.Shell):
             NOTE: press Ctrl-D or type exit to 'unbind' from current command.
 
         DEMO:
-            omega(127.0.0.1)> run type ls
+            omega(ehtools.pro)>> run type ls
             ls is /bin/ls
-            omega(127.0.0.1)> type ls
+            omega(ehtools.pro)>> type ls
             [-] Unrecognized Command: type
-            omega(127.0.0.1)> bind run
+            omega(ehtools.pro)>> bind run
             [!] Type exit to leave binded 'run' subshell.
             # now shell is bound to `run`, so we just need to execute `type ls`
-            omega(127.0.0.1) #run> type ls
+            omega(ehtools.pro)> #run> type ls
             ls is /bin/ls
         """
         if len(argv) != 2 or argv[1] not in self.complete_bind("", ""):
