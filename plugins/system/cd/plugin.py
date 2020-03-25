@@ -35,8 +35,6 @@ DESCRIPTION:
 EXAMPLES:
     > cd ..
       - Go to the directory below
-    > cd "C:\Program Files\"
-      - Go to "Program Files" directory
     > cd ~
       - Move the the user's HOME directory
 

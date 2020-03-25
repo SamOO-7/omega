@@ -41,8 +41,6 @@ LIMITATIONS:
 EXAMPLES:
     > cp -f exploit.php ../images/archive
       - Copy an exploit to a stealth location, force copy.
-    > cp \Bach\LOG\ex191213.zip C:\intepub\wwwroot\x.zip
-      - Copy this interesting file to a web accessible path.
 """
 
 import sys

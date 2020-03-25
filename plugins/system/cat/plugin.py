@@ -33,10 +33,6 @@ LIMITATIONS:
 EXAMPLES:
     > cat ../includes/connect.inc.php
       - Display the connect.inc.php's content.
-    > cat "C:\Users\granny\Desktop\bank account.TXT"
-      - Don't be evil with grannies!
-      - As gannies use spaces in file names, the path
-        must be quoted to be parsed as a single argument.
 """
 
 import sys

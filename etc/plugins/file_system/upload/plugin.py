@@ -43,7 +43,7 @@ EXAMPLES:
       - Upload your local r57.php file to the remote images dir
     > upload -f /tmp/logo-gimped.png /srv/www/img/logo.png
       - Overwrite the remote logo with your own without confirm
-    > upload C:\\Users\\blackhat\\index.php
+    > upload /tmp/index.php
       - Upload your index.php to the remote server's current
         working directory. If your location is a web root path
         which already contains an index.php, then you must

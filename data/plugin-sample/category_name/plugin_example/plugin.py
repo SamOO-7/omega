@@ -8,12 +8,11 @@ DESCRIPTION:
     Omega plugins are structured.
 
     If the `api` module is imported outside a real plugin
-    runtime (for example through `corectl python-console`),
-    then the API defaulty assumes this sample plugin as the
-    current one for learning purposes.
+    runtime, then the API defaulty assumes this sample plugin
+    as the current one for learning purposes.
 
     This text is the docstring of current plugin's
-    python file (plugin.py). It means that running `help <PLUGIN>`
+    python file (plugin.py). It means that running `help <plugin>`
     will display this docstring.
 
     Writting a plugin should comport a docstring formatted like

@@ -35,8 +35,8 @@ DESCRIPTION:
 LIMITATIONS:
     Recursive directory and multiple file downloads are not available.
 EXAMPLES:
-    > download C:\boot.ini /tmp
-      - Download the remote boot.ini file into your local dir
+    > download /var/www/config.txt /tmp
+      - Download the remote config.txt file into your local dir
     > download -f /etc/passwd /tmp
       - Download the current remote passwd file and force copy
     > download /srv/www/inc/sql.php

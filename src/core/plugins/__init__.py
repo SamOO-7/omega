@@ -68,8 +68,6 @@ class Plugins(metadict.MetaDict):
         num_loaded = self._load_plugins(categories)
         if self.errors:
             msg = "[v] %d errors encountered while loading plugins"
-            if not verbose:
-                msg += " (use `corectl reload-plugins` for + infos)"
             session.Conf.VERBOSITY = True
             print(msg % self.errors)
         if verbose or self.errors or ui.input.isatty():
@@ -102,7 +100,7 @@ class Plugins(metadict.MetaDict):
             self.current_plugin = DEFAULT_PLUGIN
 
     def _log_error(self, path, errmsg, _type="plugin"):
-        print("[v] Couldn't load %s: «%s»" % (_type, path))
+        print("[v] Could not load %s: «%s»" % (_type, path))
         print("[v]     " + errmsg)
         print("[v] ")
         self.errors += 1
