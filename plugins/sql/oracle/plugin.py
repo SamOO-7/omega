@@ -21,9 +21,9 @@
 r"""A client for Oracle PL/SQL databases.
 
 USAGE:
-    oracle connect <username> <password> "<connstr>"
-    oracle connect <username> <password> "<connstr>" <charset>
-    oracle "<command>"
+    oracle connect <username> <password> <connstr>
+    oracle connect <username> <password> <connstr> <charset>
+    oracle <command>
 
 DESCRIPTION:
     Run Oracle PL/SQL commands through Omega.
