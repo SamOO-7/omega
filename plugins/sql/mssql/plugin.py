@@ -24,7 +24,7 @@ USAGE:
     mssql connect <username>@<hostname> -p <password>
     mssql show [databases|tables]
     mssql use <database>
-    mssql "<command>"
+    mssql <command>
 
 DESCRIPTION:
     This plugin handles "Microsoft SQL Server" interactions
