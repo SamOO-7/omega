@@ -1,0 +1,52 @@
+System Commands
+===============
+
+    Command        Description
+    -------        -----------
+    cat            Print a file content.
+    cd             Change current directory.
+    chmod          Change file mode bits.
+    cp             Copy a file.
+    edit           Edit a remote file.
+    ls             List directory contents.
+    mkdir          Create a directory.
+    pwd            Print current directory.
+    rm             Remove a remote file.
+    rmdir          Remove remote directory.
+    stat           Display file status.
+    touch          Change file timestamps.
+    whoami         Print effective user ID.
+    
+SQL Commands
+============
+
+    Command        Description
+    -------        -----------
+    mssql          A client for Microsoft SQL Server.
+    mysql          A client for MySQL databases.
+    oracle         A client for Oracle PL/SQL databases.
+
+Directory Commands
+==================
+
+    Command        Description
+    -------        -----------
+    ldap           A client for ldap.
+    
+Network Commands
+================
+
+    Command        Description
+    -------        -----------
+    portscan       TCP port scanner.
+
+Other Commands
+==============
+
+    Command        Description
+    -------        -----------
+    download       Download a remote file.
+    exec           Execute a command on remote server.
+    phpinfo        Show information about PHP configuration.
+    suidroot       Setuid payload handler.
+    upload         Upload a file.
