@@ -21,7 +21,7 @@
 r"""Download a remote file.
 
 USAGE:
-    download <remote_file> <local_dir>
+    download <remote_path> <local_path>
 
 OPTIONS:
     -f
@@ -32,7 +32,7 @@ DESCRIPTION:
     - remote file must be readable.
     - local directory must be a writable directory.
     - if local directory is not provided, remote file is downloaded
-    to the Omega Framework directory.
+    to the current directory.
     - Unless '-f' option has been provided, user confirmation is
     needed to overwrite local directory (if it already exists).
 
