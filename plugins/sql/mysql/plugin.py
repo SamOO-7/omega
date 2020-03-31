@@ -24,7 +24,7 @@ USAGE:
     mysql connect <username>@<hostname> -p <password>
     mysql show [databases|tables]
     mysql use <database>
-    mysql "<command>"
+    mysql <command>
 
 DESCRIPTION:
     Run MySQL commands through Omega.
