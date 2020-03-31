@@ -32,7 +32,7 @@ DESCRIPTION:
     - remote file must be readable.
     - local directory must be a writable directory.
     - if local directory is not provided, remote file is downloaded
-    to the current directory.
+    to the current working directory.
     - Unless '-f' option has been provided, user confirmation is
     needed to overwrite local directory (if it already exists).
 
