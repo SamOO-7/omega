@@ -21,7 +21,7 @@
 """Upload a file.
 
 USAGE:
-    upload <local_file> <remote_dir>
+    upload <local_path> <remote_path>
 
 OPTIONS:
     -f
