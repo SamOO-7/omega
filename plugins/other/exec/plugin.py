@@ -21,7 +21,7 @@
 """Execute a command on remote server.
 
 USAGE:
-    exec "<command>"
+    exec <command>
 
 DESCRIPTION:
     Most Omega plugins intend to simulate shell commands
