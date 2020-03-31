@@ -643,39 +643,12 @@ class Shell(shnake.Shell):
         core_commands = self.get_names(self, "do_")
         full_help = [('\nCore Commands', core_commands)]
         max_len = max(13, len(max(core_commands, key=len)))
-        # add plugins if connected to target
-        # adapt max_len if there are command aliases
-        aliases = list(session.Alias.keys())
-        if aliases:
-            max_len = max(max_len, len(max(aliases, key=len)))
-            full_help += [("Command Aliases", aliases)]
-        # print full_help, group by group
-        cmd_col = ' ' * (max_len - 5)
-        for grp_name, grp_cmdlist in full_help:
-            if grp_name == '\nCore Commands':
-                underline = '============='
-            else:
-                underline = '=' * len(grp_name)
-            if grp_name == "Command Aliases":
-                print(grp_name + "\n" + underline + "\n" + "\n"
-                      "    Alias  " + cmd_col + "Value\n"
-                      "    -----  " + cmd_col + "-----")
-            else:
-                print(grp_name + "\n" + underline + "\n" + "\n"
-                      "    Command" + cmd_col + "Description\n"
-                      "    -------" + cmd_col + "-----------")
-            grp_cmdlist.sort()
-            for cmd_name in grp_cmdlist:
-                spacing = ' ' * (max_len - len(cmd_name) + 2)
-                if grp_name == "Command Aliases":
-                    description = session.Alias[cmd_name]
-                else:
-                    description = get_description(get_doc(cmd_name))
-                print("    " + cmd_name + spacing + description)
-                if tunnel:
-                    print("")
-                    os.system("cat data/cmds/commands.list")
-                    print("")
+        print("")
+        os.system("cat data/cmds/core_commands.list")
+        print("")
+        if tunnel:
+                os.system("cat data/cmds/commands.list")
+                print("")
 
     # pylint: disable=invalid-name
     @staticmethod
