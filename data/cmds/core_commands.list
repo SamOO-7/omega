@@ -1,0 +1,15 @@
+Core Commands
+=============
+
+    Command        Description
+    -------        -----------
+    bind           Attach a command to prompt.
+    clear          Clear terminal window.
+    env            Show environment variables.
+    exit           Exit Omega Framework.
+    help           Show help information.
+    info           Show configuration settings.
+    pymode         Run Omega Framework python mode.
+    run            Spawn a shell from target server.
+    set            Edit configuration settings.
+    update         Update Omega Framework.
