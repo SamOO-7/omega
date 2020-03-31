@@ -644,10 +644,6 @@ class Shell(shnake.Shell):
         full_help = [('\nCore Commands', core_commands)]
         max_len = max(13, len(max(core_commands, key=len)))
         # add plugins if connected to target
-        if tunnel:
-            print("")
-            os.system("cat data/cmds/commands.list")
-            print("")
         # adapt max_len if there are command aliases
         aliases = list(session.Alias.keys())
         if aliases:
@@ -676,7 +672,10 @@ class Shell(shnake.Shell):
                 else:
                     description = get_description(get_doc(cmd_name))
                 print("    " + cmd_name + spacing + description)
-            print('')
+                if tunnel:
+                    print("")
+                    os.system("cat data/cmds/commands.list")
+                    print("")
 
     # pylint: disable=invalid-name
     @staticmethod
