@@ -645,15 +645,9 @@ class Shell(shnake.Shell):
         max_len = max(13, len(max(core_commands, key=len)))
         # add plugins if connected to target
         if tunnel:
-            for category in plugins.categories():
-                items = [p for p in plugins.values() if p.category == category]
-                items = [p.name for p in items]
-                # rescale max_len in case of longer plugin names
-                max_len = max(max_len, len(max(items, key=len)))
-                if category == "Sql":
-                    full_help += [("SQL Commands", items)]
-                else:
-                    full_help += [(category + " Commands", items)]
+            print("")
+            os.system("cat data/cmds/commands.list")
+            print("")
         # adapt max_len if there are command aliases
         aliases = list(session.Alias.keys())
         if aliases:
