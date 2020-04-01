@@ -29,11 +29,13 @@
 
 # About Omega Framework
 
-    Omega Framework is a PHP post-exploitation framework, 
-    aiming to provide a stealth interactive shell-like connection 
-    over HTTP between client and web server using only a simple PHP 
-    payload. It is a powerful framework capable to maintain access 
-    to a compromised web server for privilege escalation purposes.
+```
+Omega Framework is a PHP post-exploitation framework, 
+aiming to provide a stealth interactive shell-like connection 
+over HTTP between client and web server using only a simple PHP 
+payload. It is a powerful framework capable to maintain access 
+to a compromised web server for privilege escalation purposes.
+```
 
 ***
 
@@ -59,8 +61,10 @@
 
 # Omega Framework execution
 
-    To execute Omega Framework you 
-    should execute the following command.
+```
+To execute Omega Framework you 
+should execute the following command.
+```
 
 > omega
       
@@ -90,17 +94,19 @@ to send remote commands to the web server.
     
 # Omega Framework disclaimer
 
-    Usage of the Omega Framework for attacking targets without prior mutual consent is illegal. 
-    It is the end user's responsibility to obey all applicable local, state, federal, and international laws. 
-    Developers assume no liability and are not responsible for any misuse or damage caused by this program.
-          
+```
+Usage of the Omega Framework for attacking targets without prior mutual consent is illegal.
+It is the end user's responsibility to obey all applicable local, state, federal, and international laws.
+Developers assume no liability and are not responsible for any misuse or damage caused by this program.
+```
+
 ***
 
 # Omega Framework license
 
 ```
     ---------------------------------------------------
-                      Omega Framework                                                                                         
+                      Omega Framework                  
     ---------------------------------------------------
           Copyright (C) <2020>  <Entynetproject>
 
