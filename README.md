@@ -62,7 +62,7 @@ to a compromised web server for privilege escalation purposes.
 # Omega Framework execution
 
 ```
-To execute Omega Framework you 
+To execute Omega Framework you
 should execute the following command.
 ```
 
