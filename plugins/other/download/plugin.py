@@ -91,7 +91,7 @@ if not os.path.isdir(local_dirname):
     if os.path.isdir(local_dirname):
         local_basename = os.path.basename(local_abspath)
     else:
-        sys.exit("%s: Invalid local directory!" % local_dirname)
+        sys.exit("%s: Invalid local directory" % local_dirname)
 
 try:
     Path(local_dirname, mode='w')
