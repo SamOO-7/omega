@@ -21,7 +21,7 @@
 r"""List directory contents.
 
 USAGE:
-    ls <remote_dir>
+    ls <path>
 
 DESCRIPTION:
     List the contents of remote directory.
@@ -58,12 +58,6 @@ EXAMPLES:
     > ls .. /home
       - List the path above the current working directory
       - After that, list the '/home' directory.
-    > ls D:\*.ini
-      - List any element in D:\ whose names end with '.ini'
-
-MAINTAINERS:
-    Entynetproject
-    Wannes Rombouts <https://github.com/wapiflapi>
 """
 
 import sys
