@@ -21,7 +21,7 @@
 r"""Print a file content.
 
 USAGE:
-    cat <remote_file>
+    cat <remote_path>
 
 DESCRIPTION:
     Print a file content.

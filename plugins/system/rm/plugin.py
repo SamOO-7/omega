@@ -21,7 +21,7 @@
 """Remove a remote file.
 
 USAGE:
-    rm <remote_file>
+    rm <remote_path>
 
 DESCRIPTION:
     Remove remote file from server.

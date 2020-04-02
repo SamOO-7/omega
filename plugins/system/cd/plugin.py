@@ -21,7 +21,7 @@
 r"""Change current directory.
 
 USAGE:
-    cd <remote_dir>
+    cd <remote_path>
 
 DESCRIPTION:
     Change current working directory of Omega target.

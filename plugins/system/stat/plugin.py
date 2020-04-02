@@ -21,7 +21,7 @@
 """Display file status.
 
 USAGE:
-    stat <remote_file>
+    stat <remote_path>
 
 OPTIONS:
     -L

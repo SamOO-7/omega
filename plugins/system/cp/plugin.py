@@ -21,7 +21,7 @@
 r"""Copy a file.
 
 USAGE:
-    cp <remote_file> <remote_dir>
+    cp <remote_path> <remote_path>
 
 OPTIONS:
     -f

@@ -21,7 +21,7 @@
 """Change file timestamps.
 
 USAGE:
-    touch <remote_file>
+    touch <remote_path>
 
 OPTIONS:
     -t <stamp> 

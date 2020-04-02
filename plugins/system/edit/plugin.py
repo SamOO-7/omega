@@ -21,7 +21,7 @@
 r"""Edit a remote file.
 
 USAGE:
-    edit <remote_file>
+    edit <remote_path>
 
 DESCRIPTION:
     Open and Edit remote file content with your favorite editor.

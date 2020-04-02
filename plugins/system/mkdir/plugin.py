@@ -21,7 +21,7 @@
 """Create a directory.
 
 USAGE:
-    mkdir <remote_dir>
+    mkdir <remote_path>
 
 OPTIONS:
     -p

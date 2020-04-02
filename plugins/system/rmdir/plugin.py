@@ -21,7 +21,7 @@
 """Remove remote directory.
 
 USAGE:
-    rmdir <remote_dir>
+    rmdir <remote_path>
 
 DESCRIPTION:
     Remove remote directory if it is empty.

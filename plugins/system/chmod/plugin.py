@@ -21,7 +21,7 @@
 r"""Change file mode bits.
 
 USAGE:
-    chmod <mode> <remote_file>
+    chmod <mode> <remote_path>
 
 DESCRIPTION:
     The mode parameter consists of three octal number components
