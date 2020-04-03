@@ -20,7 +20,7 @@
 
 // Check if the file exists
 if (!@file_exists($OMEGA['FILE']))
-    return error("%s: No such file or directory", $OMEGA['FILE']);
+    return error("%s: No such file", $OMEGA['FILE']);
 
 // If the path is not a regular file, throw error.
 if ((@fileperms($OMEGA['FILE']) & 0x8000) != 0x8000)
