@@ -44,7 +44,7 @@ if (($file = @fopen($target, 'w')) === False)
 {
     if (@is_dir(dirname($target)))
         return error("%s: Write permission denied", $target);
-    return error("%s: No such remote file or directory", $target);
+    return error("%s: No such file or directory", $target);
 }
 $data = base64_decode($OMEGA['DATA']);
 if (@fwrite($file, $data) === False)
