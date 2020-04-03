@@ -92,7 +92,7 @@ local_basename = os.path.basename(local_abspath)
 
 # check for errors
 if not os.path.exists(local_abspath):
-    sys.exit("Can't upload %s: No such file or directory" % local_abspath)
+    sys.exit("Can't upload %s: No such file" % local_abspath)
 
 if not os.path.isfile(local_abspath):
     sys.exit("Can't upload %s: Not a file" % local_abspath)
