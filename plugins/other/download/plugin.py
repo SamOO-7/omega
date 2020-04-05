@@ -44,8 +44,6 @@ EXAMPLES:
       - Download the remote config.txt file into your local dir
     > download -f /etc/passwd /tmp
       - Download the current remote passwd file and force copy
-    > download /srv/www/inc/sql.php
-      - Download the sql.php file to the current local directory
 """
 
 import sys
@@ -79,7 +77,7 @@ relpath = plugin.argv[arg1]
 if arglen == 3:
     local_relpath = plugin.argv[arg2]
 else:
-    local_relpath = os.getcwd()
+    sys.exit(plugin.help)
 
 abspath = server.path.abspath(relpath)
 local_abspath = utils.path.truepath(local_relpath)
