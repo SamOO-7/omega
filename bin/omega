@@ -25,14 +25,14 @@ then
 {
 cd ~/omega
 mkdir etc/.disabled
-mv plugins/file_system/download/plugin.py etc/.disabled
-mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
-cp etc/.disabled/plugin.py etc/plugins/file_system/download
+mv plugins/other/download/plugin.py etc/.disabled
+mv etc/plugins/other/download/plugin.py plugins/other/download
+cp etc/.disabled/plugin.py etc/plugins/other/download
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv plugins/file_system/upload/plugin.py etc/.disabled
-mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
-cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+mv plugins/other/upload/plugin.py etc/.disabled
+mv etc/plugins/other/upload/plugin.py plugins/other/upload
+cp etc/.disabled/plugin.py etc/plugins/other/upload
 rm -rf etc/.disabled
 } &> /dev/null
 chmod +x omega
@@ -44,14 +44,14 @@ rm ~/omega/.updated
 else
 cd ~/omega
 mkdir etc/.disabled
-mv plugins/file_system/download/plugin.py etc/.disabled
-mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
-cp etc/.disabled/plugin.py etc/plugins/file_system/download
+mv plugins/other/download/plugin.py etc/.disabled
+mv etc/plugins/other/download/plugin.py plugins/other/download
+cp etc/.disabled/plugin.py etc/plugins/other/download
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv plugins/file_system/upload/plugin.py etc/.disabled
-mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
-cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+mv plugins/other/upload/plugin.py etc/.disabled
+mv etc/plugins/other/upload/plugin.py plugins/other/upload
+cp etc/.disabled/plugin.py etc/plugins/other/upload
 rm -rf etc/.disabled
 fi
 } &> /dev/null
@@ -67,14 +67,14 @@ git clone https://github.com/entynetproject/omega.git
 cd $OLDPWD
 cd ~/omega
 mkdir etc/.disabled
-mv plugins/file_system/download/plugin.py etc/.disabled
-mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
-cp etc/.disabled/plugin.py etc/plugins/file_system/download
+mv plugins/other/download/plugin.py etc/.disabled
+mv etc/plugins/other/download/plugin.py plugins/other/download
+cp etc/.disabled/plugin.py etc/plugins/other/download
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv plugins/file_system/upload/plugin.py etc/.disabled
-mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
-cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+mv plugins/other/upload/plugin.py etc/.disabled
+mv etc/plugins/other/upload/plugin.py plugins/other/upload
+cp etc/.disabled/plugin.py etc/plugins/other/upload
 rm -rf etc/.disabled
 } &> /dev/null
 chmod +x omega
@@ -86,14 +86,14 @@ rm ~/omega/.updated
 else
 cd ~/omega
 mkdir etc/.disabled
-mv plugins/file_system/download/plugin.py etc/.disabled
-mv etc/plugins/file_system/download/plugin.py plugins/file_system/download
-cp etc/.disabled/plugin.py etc/plugins/file_system/download
+mv plugins/other/download/plugin.py etc/.disabled
+mv etc/plugins/other/download/plugin.py plugins/other/download
+cp etc/.disabled/plugin.py etc/plugins/other/download
 rm -rf etc/.disabled
 mkdir etc/.disabled
-mv plugins/file_system/upload/plugin.py etc/.disabled
-mv etc/plugins/file_system/upload/plugin.py plugins/file_system/upload
-cp etc/.disabled/plugin.py etc/plugins/file_system/upload
+mv plugins/other/upload/plugin.py etc/.disabled
+mv etc/plugins/other/upload/plugin.py plugins/other/upload
+cp etc/.disabled/plugin.py etc/plugins/other/upload
 rm -rf etc/.disabled
 fi
 } &> /dev/null
