@@ -20,7 +20,7 @@
 
 """Upload a file.
 USAGE:
-    upload <local_file> <remote_dir>
+    upload <local_path> <remote_path>
 OPTIONS:
     -f
         Overwrite destination without confirmation if it
@@ -43,11 +43,6 @@ EXAMPLES:
       - Upload your local r57.php file to the remote images dir
     > upload -f /tmp/logo-gimped.png /srv/www/img/logo.png
       - Overwrite the remote logo with your own without confirm
-    > upload /tmp/index.php
-      - Upload your index.php to the remote server's current
-        working directory. If your location is a web root path
-        which already contains an index.php, then you must
-        answer to the confirmation request.
 """
 
 import sys
@@ -81,7 +76,7 @@ else:
 if arglen == 3:
     relpath = plugin.argv[arg2]
 else:
-    relpath = server.path.getcwd()
+    sys.exit(plugin.help)
 abspath = server.path.abspath(relpath)
 
 local_relpath = plugin.argv[arg1]
