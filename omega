@@ -18,7 +18,6 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import sys
 import os
 
 os.system("printf '\033]2;Omega Framework\a'")
@@ -29,6 +28,7 @@ import src  # spread Omega sources
 import random
 import argparse
 import subprocess as sp
+import sys
 
 import core
 import ui.input
