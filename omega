@@ -94,7 +94,8 @@ def main() -> int:
     if interactive and ui.output.isatty():
         logo = Path(src.BASEDIR + "data/logo.ascii").read()
         cmdrun(iface, "clear")
-        print(logo + '\n')
+        print(logo)
+        print("")
         print("Omega Framework v3.0")
         print("--------------------")
         print("")
