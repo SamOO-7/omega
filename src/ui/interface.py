@@ -190,7 +190,7 @@ class Shell(shnake.Shell):
         keys = ["--get-payload"]
         return [x for x in keys if x.startswith(text)]
 
-    def do_run(self, argv):
+    def do_connect(self, argv):
         """Connect target server.
 
         USAGE:
