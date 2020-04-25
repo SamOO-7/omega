@@ -166,12 +166,12 @@ class Shell(shnake.Shell):
     @staticmethod
     
     def do_disconnect(argv):
-        """Disconnect target server."""
+        """Disconnect from target server."""
         if tunnel:
             tunnel.close()
             return True
         else:
-            print("[-] Target server is not connected!")
+            print("[-] Not connected to target server!")
 
     def do_exit(self, argv):
         """Exit Omega Framework."""
@@ -191,7 +191,7 @@ class Shell(shnake.Shell):
         return [x for x in keys if x.startswith(text)]
 
     def do_connect(self, argv):
-        """Connect target server.
+        """Connect to target server.
 
         USAGE:
             connect
