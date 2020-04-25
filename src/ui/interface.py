@@ -164,59 +164,26 @@ class Shell(shnake.Shell):
     #################
     # COMMAND: exit #
     @staticmethod
-    def complete_exit(text, line, *_):
-        """autocompletion for `exit` command"""
-        argv = line.split()
-        if (len(argv) == 2 and line[-1] == " ") or len(argv) > 2:
-            return []
-        keys = ["--force"]
-        return [x for x in keys if x.startswith(text)]
-
-    def do_exit(self, argv):
-        """Exit Omega Framework.
-
-        USAGE:
-            exit
-
-        OPTIONS:
-            --force
-                When called to leave the framework, this
-                option forces exit, avoiding warning message
-                if current session has not been saved to a file,
-                or has changed since last save.
-
-        DESCRIPTION:
-            If current Omega session is connected to target,
-            this command disconnects the user from remote session.
-            Otherwise, if the interface is not connected, this
-            command leaves the Omega Framework.
-        """
-        if len(argv) == 2 and argv[1] == "--force":
-            force_exit = True
-        elif len(argv) == 1:
-            force_exit = False
-        else:
-            self.interpret("help exit")
-            return False
-
-        if self.bind_command:
-            self.bind_command = None
-        elif tunnel:
+    
+    def do_disconnect(argv):
+        """Disconnect target server."""
+        if tunnel:
             tunnel.close()
+            return True
         else:
-            if not force_exit:
-                try:
-                    session_changed = session.diff(None)
-                except OSError:
-                    session_changed = bool(tunnel.has_been_active())
-            exit()
-        return True # make pylint happy
+            print("[-] Target server is not connected!")
+
+    def do_exit(argv):
+        """Exit Omega Framework."""
+        if tunnel:
+            tunnel.close()
+        exit()
 
     ####################
-    # COMMAND: run     #
+    # COMMAND: connect #
     @staticmethod
-    def complete_run(text, line, *_):
-        """autocompletion for `run` command"""
+    def complete_connect(text, line, *_):
+        """autocompletion for `connect` command"""
         argv = line.split()
         if (len(argv) == 2 and line[-1] == " ") or len(argv) > 2:
             return []
@@ -224,15 +191,15 @@ class Shell(shnake.Shell):
         return [x for x in keys if x.startswith(text)]
 
     def do_run(self, argv):
-        """Spawn a shell from target server.
+        """Connect target server.
 
         USAGE:
-            run
+            connect
 
         DESCRIPTION:
             Connect to remote target URL (`help set TARGET`).
 
-            If payload (`run --get-payload`) is correctly
+            If payload (`connect --get-payload`) is correctly
             injected in target URL, Omega spawns a remote shell.
 
         OPTIONS:
@@ -247,14 +214,14 @@ class Shell(shnake.Shell):
             if argv[1] == "--get-payload":
                 print(obj)
                 return True
-            self.interpret("help run")
+            self.interpret("help connect")
             return False
 
         print("[*] Current payload is: " + obj + "\n")
 
         if tunnel:
             m = ("[*] Use `set TARGET <value>` to use another url as target."
-                 "\n[*] To exploit a new server, disconnect from «{}» first.")
+                 "\n[*] To connect a new server, disconnect from «{}» first.")
             print(m.format(session.Env.HOST))
             return False
 
