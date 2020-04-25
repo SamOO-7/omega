@@ -23,7 +23,7 @@
  </a>
 </p>
 
-![omega](https://user-images.githubusercontent.com/54115104/79969720-8f2ad380-849a-11ea-86dd-11bb35ef4cc0.png)
+![omega](https://user-images.githubusercontent.com/54115104/80290034-7e54b900-874b-11ea-9b55-a46b77f26dfe.png)
 
 ***
 
@@ -93,7 +93,7 @@ Omega Framework uses secure HTTP headers
 to send remote commands to the web server.
 ```
 
-![http](https://user-images.githubusercontent.com/54115104/79969734-9356f100-849a-11ea-8f32-d3261bbf0047.png)
+![http](https://user-images.githubusercontent.com/54115104/80290036-7f85e600-874b-11ea-83ac-e735c8e7ba14.png)
 
 ***
     
