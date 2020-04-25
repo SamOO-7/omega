@@ -173,7 +173,7 @@ class Shell(shnake.Shell):
         else:
             print("[-] Target server is not connected!")
 
-    def do_exit(argv):
+    def do_exit():
         """Exit Omega Framework."""
         if tunnel:
             tunnel.close()
