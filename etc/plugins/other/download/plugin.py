@@ -20,7 +20,7 @@
 
 r"""Download a remote file.
 USAGE:
-    download <remote_path> <local_path>
+    download <remote_file> <local_path>
 OPTIONS:
     -f
         Overwrite local directory without user confirmation.
