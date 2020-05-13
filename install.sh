@@ -54,19 +54,9 @@ then
    exit
 fi
 
-if [[ -d ~/omega ]]
-then
-sleep 0
-else
-cd ~
-{
-git clone https://github.com/entynetproject/omega.git
-} &> /dev/null
-fi
 sleep 0.5
 clear
 sleep 0.5
-cd ~/omega
 cat banner/banner.txt
 echo
 
@@ -110,13 +100,23 @@ xbps-install -y python3
 xbps-install -y python3-pip
 } &> /dev/null
 
+if [[ -d ~/omega ]]
+then
+sleep 0
+else
+cd ~
+{
+git clone https://github.com/entynetproject/omega.git
+} &> /dev/null
+fi
+
 {
 python3 -m pip install setuptools
 python3 -m pip install -r requirements.txt
 } &> /dev/null
 
 {
-cd ~/omega/bin
+cd bin
 cp omega /usr/local/bin
 chmod +x /usr/local/bin/omega
 cp omega /bin
