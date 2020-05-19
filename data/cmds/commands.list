@@ -16,6 +16,17 @@ System Commands
     stat           Display file status.
     touch          Change file timestamps.
     whoami         Print effective user ID.
+
+Managing Commands
+=================
+
+    Command        Description
+    -------        -----------
+    download       Download a remote file.
+    exec           Execute a command on remote server.
+    phpinfo        Show information about PHP configuration.
+    suidroot       Setuid payload handler.
+    upload         Upload a file.
     
 SQL Commands
 ============
@@ -39,14 +50,3 @@ Network Commands
     Command        Description
     -------        -----------
     portscan       TCP port scanner.
-
-Other Commands
-==============
-
-    Command        Description
-    -------        -----------
-    download       Download a remote file.
-    exec           Execute a command on remote server.
-    phpinfo        Show information about PHP configuration.
-    suidroot       Setuid payload handler.
-    upload         Upload a file.
