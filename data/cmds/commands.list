@@ -22,20 +22,18 @@ Managing Commands
 
     Command        Description
     -------        -----------
-    download       Download a remote file.
+    download       Download remote file.
     exec           Execute a command on remote server.
     phpinfo        Show information about PHP configuration.
     suidroot       Setuid payload handler.
-    upload         Upload a file.
-    
-SQL Commands
-============
+    upload         Upload local file.
+
+Stealing Commands
+=================
 
     Command        Description
     -------        -----------
-    mssql          A client for Microsoft SQL Server.
-    mysql          A client for MySQL databases.
-    oracle         A client for Oracle PL/SQL databases.
+    download       Download remote file.
 
 Directory Commands
 ==================
@@ -50,3 +48,12 @@ Network Commands
     Command        Description
     -------        -----------
     portscan       TCP port scanner.
+
+SQL Commands
+============
+
+    Command        Description
+    -------        -----------
+    mssql          A client for Microsoft SQL Server.
+    mysql          A client for MySQL databases.
+    oracle         A client for Oracle PL/SQL databases.
