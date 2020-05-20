@@ -18,26 +18,15 @@
 #        You should have received a copy of the GNU General Public License
 #        along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-RS="\033[1;31m"
-YS="\033[1;33m"
-CE="\033[0m"
-
 printf '\033]2;install.sh\a'
 
-#blue start 
-	BS="\033[1;34m"
-#color end
-	CE="\033[0m"
-#red start
-	RS="\033[31m"
-#green start
-	GNS="-e \033[1;32m"
-#white start
-   WHS="\033[0m"
+G="\033[1;34m[*] \033[0m"
+S="\033[1;32m[+] \033[0m"
+E="\033[1;31m[-] \033[0m"
 
 if [[ $EUID -ne 0 ]]
 then
-   echo -e ""$RS"[-] "$WHS"This script must be run as root!"$CE""
+   echo -e ""$E"This script must be run as root!"
    exit
 fi
 
@@ -46,7 +35,7 @@ ASESR="$(ping -c 1 -q www.google.com >&/dev/null; echo $?)"
 } &> /dev/null
 if [[ "$ASESR" != 0 ]]
 then 
-   echo -e ""$RS"[-] "$WHS"No Internet connection!"$CE""
+   echo -e ""$E"No Internet connection!"
    exit
 fi
 
@@ -57,7 +46,7 @@ cat banner/banner.txt
 echo
 
 sleep 1
-echo -e ""$BS"[*]"$WHS" Installing dependencies..."$CE""
+echo -e ""$G"Installing dependencies..."
 sleep 1
 
 {
@@ -110,7 +99,7 @@ if [[ -d ~/omega ]]
 then
 cd ~/omega
 else
-echo -e ""$RS"[-] "$WHS"Installation failed!"$CE""
+echo -e ""$E"Installation failed!"
 exit
 fi
 
@@ -130,5 +119,5 @@ chmod +x /data/data/com.termux/files/usr/bin/omega
 } &> /dev/null
 
 sleep 1
-echo ""$GNS"[+]"$WHS" Successfully installed!"$CE""
+echo ""$S"Successfully installed!"
 sleep 1
