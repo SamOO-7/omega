@@ -52,7 +52,7 @@ echo -e ""$E"Permission denied!"
 exit
 fi
 sleep 1
-echo ""$G"Installing update..."
+echo -e ""$G"Installing update..."
 {
 rm -rf ~/omega
 rm /bin/omega
@@ -69,7 +69,7 @@ chmod +x install.sh
 ./install.sh
 fi
 } &> /dev/null
-echo ""$S"Successfully updated!"
+echo -e ""$S"Successfully updated!"
 cd .
 touch .updated
 sleep 1
