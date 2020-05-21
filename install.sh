@@ -119,5 +119,5 @@ chmod +x /data/data/com.termux/files/usr/bin/omega
 } &> /dev/null
 
 sleep 1
-echo ""$S"Successfully installed!"
+echo -e ""$S"Successfully installed!"
 sleep 1
