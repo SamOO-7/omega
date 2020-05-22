@@ -22,7 +22,6 @@ Managing Commands
 
     Command        Description
     -------        -----------
-    download       Download remote file.
     exec           Execute a command on remote server.
     phpinfo        Show information about PHP configuration.
     suidroot       Setuid payload handler.
